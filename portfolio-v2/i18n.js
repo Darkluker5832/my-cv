@@ -299,7 +299,10 @@ Object.assign(portfolioTranslations, {
     const button = event.target.closest('[data-language]');
     if (button) setLanguage(button.dataset.language);
   });
-  let language = 'vi';
-  try { if (localStorage.getItem('portfolio-language') === 'en') language = 'en'; } catch {}
+  let language = 'en';
+  try {
+    const savedLanguage = localStorage.getItem('portfolio-language');
+    if (savedLanguage === 'vi' || savedLanguage === 'en') language = savedLanguage;
+  } catch {}
   setLanguage(language);
 })();
