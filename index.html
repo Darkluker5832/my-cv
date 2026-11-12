@@ -1,16 +1,16 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Phillip — Staff Software Engineer & System Architect</title>
+  <title>Phillip â€” Staff Software Engineer & System Architect</title>
   <meta name="description" content="Resume and portfolio of Phillip, Staff Software Engineer specializing in backend engineering, distributed systems, .NET ecosystem, and enterprise architecture.">
   <meta name="keywords" content="Staff Software Engineer, System Architect, .NET Core, C#, Distributed Systems, SQL Server, RabbitMQ, High Availability">
   <meta name="author" content="Phillip">
 
   <!-- Open Graph / Meta -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Phillip — Staff Software Engineer | System Architect">
+  <meta property="og:title" content="Phillip â€” Staff Software Engineer | System Architect">
   <meta property="og:description" content="16+ years experience in backend engineering, system architecture, and platform modernization.">
 
   <!-- Favicon SVG -->
@@ -69,8 +69,35 @@
     </div>
   </header>
 
+  <!-- Main Tabs Navigation Bar -->
+  <nav class="tab-navigation-wrapper no-print" aria-label="Resume View Navigation">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6">
+      <div class="tab-nav-container" role="tablist">
+        <button class="main-tab-btn active" data-tab="tab-general" role="tab" aria-selected="true" aria-controls="tab-general">
+          <svg class="w-4 h-4 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+          </svg>
+          <span>Tab 1: General Profile</span>
+        </button>
+
+        <button class="main-tab-btn" data-tab="tab-job-hub" role="tab" aria-selected="false" aria-controls="tab-job-hub">
+          <svg class="w-4 h-4 text-indigo-600 dark:text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+          </svg>
+          <span>Tab 2: Project Job Hub</span>
+          <span class="tab-badge">Architectural Showcase</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
   <!-- Main Content Container -->
-  <main id="top" class="max-w-5xl mx-auto px-4 sm:px-6 py-8 sm:py-12 space-y-12 sm:space-y-16">
+  <main id="top" class="max-w-5xl mx-auto px-4 sm:px-6 py-6 sm:py-8">
+
+    <!-- =========================================================================
+         TAB 1: GENERAL PROFILE
+         ========================================================================= -->
+    <div id="tab-general" class="tab-pane active space-y-12 sm:space-y-16" role="tabpanel">
 
     <!-- HERO SECTION -->
     <section class="resume-card relative overflow-hidden border border-slate-200 dark:border-slate-800 rounded-2xl p-6 sm:p-10 bg-gradient-to-br from-white to-slate-50 dark:from-slate-900 dark:to-slate-950 shadow-sm">
@@ -248,12 +275,12 @@
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-2">
             <h3 class="text-xl font-bold text-slate-900 dark:text-white">Staff Software Engineer</h3>
             <span class="text-xs font-mono px-2.5 py-1 rounded bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-300 w-fit">
-              [Start Year] – Present (~13 Years)
+              [Start Year] â€“ Present (~13 Years)
             </span>
           </div>
 
           <div class="text-sm font-semibold text-blue-600 dark:text-blue-400 mb-4">
-            Pioneers / Pionex · [Company Name]
+            Pioneers / Pionex Â· [Company Name]
           </div>
 
           <ul class="space-y-2.5 text-sm sm:text-base text-slate-700 dark:text-slate-300 list-disc list-outside pl-4">
@@ -310,7 +337,7 @@
             <h3 class="text-lg sm:text-xl font-bold text-slate-900 dark:text-white">
               1. Customer Setting Modernization Platform
             </h3>
-            <span class="badge-role">Technical Project Lead · Team of 5</span>
+            <span class="badge-role">Technical Project Lead Â· Team of 5</span>
           </div>
 
           <div class="flex flex-wrap gap-1.5 mb-4">
@@ -346,7 +373,7 @@
         <article class="project-card">
           <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2 mb-3">
             <h3 class="text-lg sm:text-xl font-bold text-slate-900 dark:text-white">
-              2. Mail Station — Centralized Email Processing
+              2. Mail Station â€” Centralized Email Processing
             </h3>
             <span class="badge-role">Key Developer / Technical Contributor</span>
           </div>
@@ -383,9 +410,9 @@
         <article class="project-card">
           <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2 mb-3">
             <h3 class="text-lg sm:text-xl font-bold text-slate-900 dark:text-white">
-              3. Task Station — Centralized Job Scheduling
+              3. Task Station â€” Centralized Job Scheduling
             </h3>
-            <span class="badge-role">Project Contributor · Team of 5</span>
+            <span class="badge-role">Project Contributor Â· Team of 5</span>
           </div>
 
           <div class="flex flex-wrap gap-1.5 mb-4">
@@ -413,6 +440,14 @@
 
           <div class="project-impact">
             <strong>Impact:</strong> Standardized scheduled task execution across services, eliminating scattered Windows Scheduled Tasks and one-off cron scripts.
+          </div>
+
+          <div class="mt-4 pt-3 border-t border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+            <span class="text-xs text-slate-500 dark:text-slate-400">Architectural Evolution & Deep Dive:</span>
+            <button type="button" onclick="switchMainTab('tab-job-hub')" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-blue-50 text-blue-700 hover:bg-blue-100 dark:bg-blue-950/70 dark:text-blue-300 dark:hover:bg-blue-900 border border-blue-200 dark:border-blue-800 transition-colors cursor-pointer w-fit">
+              <span>View Full Job Hub Architecture & UML in Tab 2</span>
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+            </button>
           </div>
         </article>
 
@@ -650,13 +685,669 @@
       </div>
     </section>
 
+    </div><!-- End #tab-general -->
+
+    <!-- =========================================================================
+         TAB 2: PROJECT JOB HUB (ARCHITECTURAL SHOWCASE)
+         ========================================================================= -->
+    <div id="tab-job-hub" class="tab-pane hidden space-y-10 sm:space-y-12" role="tabpanel">
+
+      <!-- PROJECT HERO BANNER -->
+      <section class="project-banner">
+        <div class="flex flex-col md:flex-row md:items-start justify-between gap-4">
+          <div class="space-y-1.5">
+            <div class="inline-flex items-center gap-2 px-3 py-0.5 rounded-full bg-blue-100 dark:bg-blue-950/80 border border-blue-200 dark:border-blue-800 text-blue-800 dark:text-blue-300 text-xs font-mono font-medium">
+              Featured Project
+            </div>
+            <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white">
+              Project Job Hub
+            </h1>
+            <p class="text-sm sm:text-base font-semibold text-blue-600 dark:text-blue-400">
+              Centralized Job Orchestration &amp; Real-Time Control Platform
+            </p>
+          </div>
+          <span class="badge-role text-center self-start">System Architect &amp; Lead Engineer</span>
+        </div>
+
+        <div class="flex flex-wrap gap-1.5 mt-4 pt-3 border-t border-blue-200/60 dark:border-blue-900/60">
+          <span class="tech-tag">C# / .NET 9</span>
+          <span class="tech-tag">ASP.NET Core Minimal API</span>
+          <span class="tech-tag">RabbitMQ</span>
+          <span class="tech-tag">Pub/Sub Pattern</span>
+          <span class="tech-tag">Request/Reply (RPC)</span>
+          <span class="tech-tag">SQL Server</span>
+          <span class="tech-tag">ReactJS</span>
+          <span class="tech-tag">Docker</span>
+          <span class="tech-tag">CancellationToken</span>
+        </div>
+      </section>
+
+      <!-- =======================================================================
+           PART 1: PROJECT OVERVIEW (GIá»šI THIá»†U NGáº®N Gá»ŒN)
+           ======================================================================= -->
+      <section class="section-container">
+        <div class="section-header">
+          <div class="section-icon">
+            <svg class="w-5 h-5 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <div>
+            <h2 class="section-title">Part 1: Project Overview</h2>
+            <p class="text-xs text-slate-500 dark:text-slate-400 font-mono">Giá»›i thiá»‡u ngáº¯n gá»n bá»‘i cáº£nh, thá»±c tráº¡ng &amp; giáº£i phÃ¡p</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <!-- Problem Box -->
+          <div class="card-challenge space-y-2">
+            <div class="font-bold text-red-700 dark:text-red-400 text-sm flex items-center gap-2">
+              <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+              <span>Problem &amp; Context (Thá»±c tráº¡ng)</span>
+            </div>
+            <ul class="text-xs sm:text-sm text-slate-700 dark:text-slate-300 space-y-1.5 list-disc pl-4">
+              <li><strong>Job sprawl &amp; no visibility:</strong> Multiple teams ran background jobs (data extraction, email reports) independently without a central catalog, leading to duplication and conflicting queries on shared databases.</li>
+              <li><strong>Zombie jobs:</strong> Obsolete jobs continued running indefinitely because no one knew to remove them, wasting server CPU, memory, and database I/O.</li>
+              <li><strong>Zero operational control:</strong> No central dashboard to monitor execution state or kill/retry hung jobs without restarting entire service containers.</li>
+            </ul>
+          </div>
+
+          <!-- Solution Box -->
+          <div class="card-solution space-y-2">
+            <div class="font-bold text-emerald-700 dark:text-emerald-400 text-sm flex items-center gap-2">
+              <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              <span>Solution: Job Hub (Giáº£i phÃ¡p)</span>
+            </div>
+            <ul class="text-xs sm:text-sm text-slate-700 dark:text-slate-300 space-y-1.5 list-disc pl-4">
+              <li><strong>Unified Dashboard:</strong> Centralized CRUD, cron scheduling, email recipient management, and instant on/off toggle switch for all jobs.</li>
+              <li><strong>Decoupled Pub/Sub:</strong> Job Hub schedules &amp; publishes trigger messages to RabbitMQ; independent team services subscribe and execute business logic.</li>
+              <li><strong>Request/Reply RPC:</strong> Real-time kill/retry of running jobs via RabbitMQ request/response pattern and <code class="text-xs font-mono font-semibold">CancellationToken</code>.</li>
+              <li><strong>Full Observability:</strong> Real-time status (<span class="font-mono text-xs">QUEUED</span>, <span class="font-mono text-xs">RUNNING</span>, <span class="font-mono text-xs">SUCCEEDED</span>, <span class="font-mono text-xs">FAILED</span>, <span class="font-mono text-xs">KILLED</span>) and execution audit logs.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- =======================================================================
+           PART 2: STANDARD UML DIAGRAMS (Váº¼ HÃŒNH UML ÄÃšNG CHUáº¨N)
+           ======================================================================= -->
+      <section class="section-container">
+        <div class="section-header">
+          <div class="section-icon">
+            <svg class="w-5 h-5 text-indigo-600 dark:text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" />
+            </svg>
+          </div>
+          <div>
+            <h2 class="section-title">Part 2: Standard UML Diagrams</h2>
+            <p class="text-xs text-slate-500 dark:text-slate-400 font-mono">Biá»ƒu Ä‘á»“ UML Component vÃ  UML Sequence Ä‘Ãºng chuáº©n</p>
+          </div>
+        </div>
+
+        <div class="uml-viewer-box">
+          <div class="uml-viewer-header">
+            <div class="flex items-center gap-2">
+              <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+              <span class="text-xs font-mono font-semibold text-slate-800 dark:text-slate-200">UML Specification View</span>
+            </div>
+            <div class="uml-tab-nav" role="tablist">
+              <button type="button" class="uml-tab-btn active" data-diagram="diag-component">UML Component Diagram</button>
+              <button type="button" class="uml-tab-btn" data-diagram="diag-sequence">UML Sequence Diagram</button>
+              <button type="button" class="uml-tab-btn" data-diagram="diag-mermaid">Mermaid UML Code</button>
+            </div>
+          </div>
+
+          <div class="uml-diagram-canvas">
+
+            <!-- ==========================================
+                 DIAGRAM 1: STANDARD UML COMPONENT DIAGRAM
+                 ========================================== -->
+            <div id="diag-component" class="uml-pane">
+              <svg class="svg-diagram" viewBox="0 0 920 480" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <marker id="uml-arr" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto">
+                    <polygon points="0 0, 9 3.5, 0 7" fill="#475569"/>
+                  </marker>
+                  <marker id="uml-arr-open" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+                    <polyline points="1 1, 9 4, 1 7" fill="none" stroke="#475569" stroke-width="1.4"/>
+                  </marker>
+                </defs>
+
+                <style>
+                  .uml-frame { fill: #ffffff; stroke: #94a3b8; stroke-width: 1.2; rx: 4px; }
+                  .uml-frame-tag { fill: #f1f5f9; stroke: #94a3b8; stroke-width: 1.2; }
+                  .uml-frame-text { font: bold 11px 'JetBrains Mono', monospace; fill: #334155; }
+                  
+                  .uml-c-box { fill: #ffffff; stroke: #334155; stroke-width: 1.4; rx: 4px; }
+                  .uml-c-glyph { fill: #ffffff; stroke: #334155; stroke-width: 1; }
+                  .uml-c-stereo { font: italic 10px 'Inter', sans-serif; fill: #64748b; text-anchor: middle; }
+                  .uml-c-name { font: bold 12px 'Inter', sans-serif; fill: #0f172a; text-anchor: middle; }
+                  .uml-c-sub { font: 9.5px 'JetBrains Mono', monospace; fill: #475569; }
+                  .uml-if-name { font: 9.5px 'JetBrains Mono', monospace; fill: #2563eb; font-weight: 600; }
+                  .uml-dep-text { font: italic 9.5px 'Inter', sans-serif; fill: #64748b; text-anchor: middle; }
+
+                  html.dark .uml-frame { fill: #0b1120; stroke: #475569; }
+                  html.dark .uml-frame-tag { fill: #1e293b; stroke: #475569; }
+                  html.dark .uml-frame-text { fill: #cbd5e1; }
+                  html.dark .uml-c-box { fill: #0f172a; stroke: #94a3b8; }
+                  html.dark .uml-c-glyph { fill: #0f172a; stroke: #94a3b8; }
+                  html.dark .uml-c-stereo { fill: #94a3b8; }
+                  html.dark .uml-c-name { fill: #f8fafc; }
+                  html.dark .uml-c-sub { fill: #94a3b8; }
+                  html.dark .uml-if-name { fill: #60a5fa; }
+                </style>
+
+                <!-- UML Frame -->
+                <rect x="15" y="15" width="890" height="450" class="uml-frame"/>
+                <polygon points="15,15 15,38 230,38 245,15" class="uml-frame-tag"/>
+                <text x="25" y="30" class="uml-frame-text">cmp Job Hub System</text>
+
+                <!-- Component 1: JobHubAdminUI -->
+                <g transform="translate(40, 60)">
+                  <rect width="210" height="75" class="uml-c-box"/>
+                  <!-- Standard UML Component Glyph -->
+                  <rect x="186" y="8" width="16" height="12" class="uml-c-glyph"/>
+                  <rect x="182" y="10" width="7" height="3" class="uml-c-glyph"/>
+                  <rect x="182" y="15" width="7" height="3" class="uml-c-glyph"/>
+                  <text x="105" y="28" class="uml-c-stereo">&laquo;component&raquo;</text>
+                  <text x="105" y="44" class="uml-c-name">JobHubAdminUI</text>
+                  <text x="14" y="62" class="uml-c-sub">[React Dashboard Â· CRUD &amp; Controls]</text>
+                </g>
+
+                <!-- Connector 1 (UI to Core API via Assembly Connector / Dependency) -->
+                <line x1="145" y1="135" x2="145" y2="160" stroke="#334155" stroke-width="1.3"/>
+                <!-- Socket on UI side -->
+                <path d="M 137,160 A 8,8 0 0,0 153,160" fill="none" stroke="#334155" stroke-width="1.3"/>
+                <!-- Lollipop on API side -->
+                <line x1="145" y1="168" x2="145" y2="190" stroke="#334155" stroke-width="1.3"/>
+                <circle cx="145" cy="164" r="4.5" fill="#ffffff" stroke="#334155" stroke-width="1.3"/>
+                <text x="158" y="166" class="uml-if-name">IJobHubApi (REST/WS)</text>
+
+                <!-- Component 2: JobHubCoreService -->
+                <g transform="translate(40, 190)">
+                  <rect width="240" height="135" class="uml-c-box"/>
+                  <rect x="216" y="8" width="16" height="12" class="uml-c-glyph"/>
+                  <rect x="212" y="10" width="7" height="3" class="uml-c-glyph"/>
+                  <rect x="212" y="15" width="7" height="3" class="uml-c-glyph"/>
+                  <text x="120" y="28" class="uml-c-stereo">&laquo;component&raquo;</text>
+                  <text x="120" y="44" class="uml-c-name">JobHubCoreService</text>
+                  <line x1="10" y1="52" x2="230" y2="52" stroke="#cbd5e1" stroke-width="1"/>
+                  <text x="14" y="68" class="uml-c-sub">+ CronSchedulerEngine</text>
+                  <text x="14" y="84" class="uml-c-sub">+ JobStateManager</text>
+                  <text x="14" y="100" class="uml-c-sub">+ RabbitMqPublisher (Pub/Sub)</text>
+                  <text x="14" y="116" class="uml-c-sub">+ RpcControlClient (Req/Reply)</text>
+                </g>
+
+                <!-- Database: JobHubDB -->
+                <g transform="translate(60, 365)">
+                  <!-- Cylinder -->
+                  <ellipse cx="90" cy="14" rx="50" ry="10" class="uml-c-box"/>
+                  <rect x="40" y="14" width="100" height="40" class="uml-c-box" style="stroke-top:none; rx:0;"/>
+                  <ellipse cx="90" cy="54" rx="50" ry="10" class="uml-c-box"/>
+                  <ellipse cx="90" cy="14" rx="50" ry="10" fill="#ffffff" stroke="#334155" stroke-width="1.3"/>
+                  <text x="90" y="24" class="uml-c-stereo">&laquo;database&raquo;</text>
+                  <text x="90" y="42" class="uml-c-name">JobHubDB</text>
+                  <text x="90" y="78" class="uml-c-sub" text-anchor="middle">[SQL Server: Jobs, Cron, Logs]</text>
+                </g>
+
+                <!-- Connector: Core API to DB -->
+                <line x1="150" y1="325" x2="150" y2="340" stroke="#334155" stroke-width="1.3"/>
+                <path d="M 142,340 A 8,8 0 0,0 158,340" fill="none" stroke="#334155" stroke-width="1.3"/>
+                <circle cx="150" cy="344" r="4.5" fill="#ffffff" stroke="#334155" stroke-width="1.3"/>
+                <line x1="150" y1="348" x2="150" y2="365" stroke="#334155" stroke-width="1.3"/>
+
+                <!-- Component 3: RabbitMQ Message Broker -->
+                <g transform="translate(350, 150)">
+                  <rect width="230" height="205" class="uml-c-box" style="stroke:#ea580c;"/>
+                  <rect x="206" y="8" width="16" height="12" class="uml-c-glyph" style="stroke:#ea580c;"/>
+                  <rect x="202" y="10" width="7" height="3" class="uml-c-glyph" style="stroke:#ea580c;"/>
+                  <rect x="202" y="15" width="7" height="3" class="uml-c-glyph" style="stroke:#ea580c;"/>
+                  <text x="115" y="28" class="uml-c-stereo">&laquo;component&raquo;</text>
+                  <text x="115" y="44" class="uml-c-name" style="fill:#ea580c;">RabbitMQ Broker</text>
+                  <line x1="10" y1="52" x2="220" y2="52" stroke="#ea580c" stroke-width="0.8"/>
+                  
+                  <text x="14" y="70" class="uml-c-sub" style="font-weight:bold;">Pub/Sub Exchange:</text>
+                  <text x="20" y="86" class="uml-c-sub">â€¢ job.trigger.exchange (Topic)</text>
+                  <text x="24" y="102" class="uml-c-sub">&rarr; q.team-*.jobs</text>
+                  
+                  <text x="14" y="126" class="uml-c-sub" style="font-weight:bold;">Request/Reply Queues:</text>
+                  <text x="20" y="142" class="uml-c-sub">â€¢ q.job.control.requests</text>
+                  <text x="20" y="158" class="uml-c-sub">â€¢ amq.gen-reply-cb-* (temp)</text>
+                  
+                  <text x="14" y="186" class="uml-c-sub" style="font-style:italic;">[AMQP 0-9-1 Messaging Protocol]</text>
+                </g>
+
+                <!-- Connector: JobHub API to RabbitMQ (Lollipop-Socket Assembly) -->
+                <!-- Upper Connector: Trigger Pub/Sub -->
+                <line x1="280" y1="225" x2="305" y2="225" stroke="#334155" stroke-width="1.3"/>
+                <path d="M 305,217 A 8,8 0 0,0 305,233" fill="none" stroke="#334155" stroke-width="1.3"/>
+                <circle cx="309" cy="225" r="4.5" fill="#ffffff" stroke="#ea580c" stroke-width="1.3"/>
+                <line x1="314" y1="225" x2="350" y2="225" stroke="#ea580c" stroke-width="1.3"/>
+                <text x="305" y="212" class="uml-if-name" text-anchor="middle">IPublishTrigger</text>
+
+                <!-- Lower Connector: RPC Request/Reply -->
+                <line x1="280" y1="280" x2="305" y2="280" stroke="#334155" stroke-width="1.3"/>
+                <circle cx="309" cy="280" r="4.5" fill="#ffffff" stroke="#334155" stroke-width="1.3"/>
+                <path d="M 314,272 A 8,8 0 0,0 314,288" fill="none" stroke="#ea580c" stroke-width="1.3"/>
+                <line x1="314" y1="280" x2="350" y2="280" stroke="#ea580c" stroke-width="1.3"/>
+                <text x="310" y="298" class="uml-if-name" text-anchor="middle">IRpcControl</text>
+
+                <!-- Component 4: TeamWorkerService -->
+                <g transform="translate(640, 160)">
+                  <rect width="240" height="190" class="uml-c-box" style="stroke:#059669;"/>
+                  <rect x="216" y="8" width="16" height="12" class="uml-c-glyph" style="stroke:#059669;"/>
+                  <rect x="212" y="10" width="7" height="3" class="uml-c-glyph" style="stroke:#059669;"/>
+                  <rect x="212" y="15" width="7" height="3" class="uml-c-glyph" style="stroke:#059669;"/>
+                  <text x="120" y="28" class="uml-c-stereo">&laquo;component&raquo;</text>
+                  <text x="120" y="44" class="uml-c-name" style="fill:#059669;">TeamWorkerService</text>
+                  <text x="120" y="58" class="uml-c-sub" text-anchor="middle">[Team-Owned Microservice]</text>
+                  <line x1="10" y1="66" x2="230" y2="66" stroke="#059669" stroke-width="0.8"/>
+                  
+                  <text x="14" y="84" class="uml-c-sub">+ JobMessageSubscriber</text>
+                  <text x="14" y="100" class="uml-c-sub">+ BusinessLogicHandler</text>
+                  <text x="24" y="116" class="uml-c-sub">&bull; Data Extraction &amp; Report Prep</text>
+                  <text x="14" y="136" class="uml-c-sub">+ CancellationTokenRegistry</text>
+                  <text x="14" y="152" class="uml-c-sub">+ RpcControlResponder</text>
+                  <text x="24" y="168" class="uml-c-sub">&bull; Kill / Cancel / Retry Handler</text>
+                </g>
+
+                <!-- Connector: RabbitMQ to TeamWorkerService (Assembly Connector) -->
+                <!-- Trigger Consume Assembly -->
+                <line x1="580" y1="225" x2="605" y2="225" stroke="#ea580c" stroke-width="1.3"/>
+                <circle cx="609" cy="225" r="4.5" fill="#ffffff" stroke="#ea580c" stroke-width="1.3"/>
+                <path d="M 614,217 A 8,8 0 0,0 614,233" fill="none" stroke="#059669" stroke-width="1.3"/>
+                <line x1="614" y1="225" x2="640" y2="225" stroke="#059669" stroke-width="1.3"/>
+                <text x="610" y="212" class="uml-if-name" text-anchor="middle">ISubscriber</text>
+
+                <!-- RPC Responder Assembly -->
+                <line x1="580" y1="280" x2="605" y2="280" stroke="#ea580c" stroke-width="1.3"/>
+                <path d="M 605,272 A 8,8 0 0,0 605,288" fill="none" stroke="#ea580c" stroke-width="1.3"/>
+                <circle cx="609" cy="280" r="4.5" fill="#ffffff" stroke="#059669" stroke-width="1.3"/>
+                <line x1="614" y1="280" x2="640" y2="280" stroke="#059669" stroke-width="1.3"/>
+                <text x="610" y="298" class="uml-if-name" text-anchor="middle">IControlResponder</text>
+
+                <!-- Downstream Targets: MailStation & Data Sources -->
+                <g transform="translate(680, 385)">
+                  <rect width="180" height="50" class="uml-c-box"/>
+                  <rect x="156" y="6" width="14" height="10" class="uml-c-glyph"/>
+                  <rect x="153" y="8" width="6" height="2.5" class="uml-c-glyph"/>
+                  <rect x="153" y="12" width="6" height="2.5" class="uml-c-glyph"/>
+                  <text x="90" y="20" class="uml-c-stereo">&laquo;component&raquo;</text>
+                  <text x="90" y="34" class="uml-c-name">MailStation / SMTP</text>
+                </g>
+                <line x1="770" y1="350" x2="770" y2="385" stroke="#334155" stroke-width="1.3" marker-end="url(#uml-arr)"/>
+              </svg>
+            </div>
+
+            <!-- ==========================================
+                 DIAGRAM 2: STANDARD UML SEQUENCE DIAGRAM
+                 ========================================== -->
+            <div id="diag-sequence" class="uml-pane hidden">
+              <svg class="svg-diagram" viewBox="0 0 920 540" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <!-- UML Synchronous Call Arrow: filled triangle -->
+                  <marker id="seq-sync" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+                    <polygon points="0 0, 8 3, 0 6" fill="#0f172a"/>
+                  </marker>
+                  <!-- UML Asynchronous Message Arrow: open / stick arrowhead -->
+                  <marker id="seq-async" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto">
+                    <polyline points="1 1, 8 3.5, 1 6" fill="none" stroke="#ea580c" stroke-width="1.5"/>
+                  </marker>
+                  <!-- UML Return / Reply Arrow: dashed line with open stick arrowhead -->
+                  <marker id="seq-reply" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto">
+                    <polyline points="1 1, 8 3.5, 1 6" fill="none" stroke="#2563eb" stroke-width="1.5"/>
+                  </marker>
+                  <marker id="seq-reply-g" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto">
+                    <polyline points="1 1, 8 3.5, 1 6" fill="none" stroke="#059669" stroke-width="1.5"/>
+                  </marker>
+                  <marker id="seq-cancel" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto">
+                    <polyline points="1 1, 8 3.5, 1 6" fill="none" stroke="#dc2626" stroke-width="1.5"/>
+                  </marker>
+                </defs>
+
+                <style>
+                  .sd-frame { fill: #ffffff; stroke: #94a3b8; stroke-width: 1.2; rx: 4px; }
+                  .sd-frame-tag { fill: #f1f5f9; stroke: #94a3b8; stroke-width: 1.2; }
+                  .sd-frame-text { font: bold 11px 'JetBrains Mono', monospace; fill: #334155; }
+                  
+                  .sd-frag-box { fill: none; stroke: #94a3b8; stroke-width: 1; stroke-dasharray: 6 3; }
+                  .sd-frag-tag { fill: #f8fafc; stroke: #94a3b8; stroke-width: 1; }
+                  .sd-frag-text { font: bold 10px 'JetBrains Mono', monospace; fill: #475569; }
+                  
+                  .sd-life-box { fill: #ffffff; stroke: #334155; stroke-width: 1.4; rx: 4px; }
+                  .sd-life-name { font: bold 11px 'JetBrains Mono', monospace; fill: #0f172a; text-anchor: middle; }
+                  .sd-life-line { stroke: #94a3b8; stroke-width: 1; stroke-dasharray: 4 4; }
+                  
+                  .sd-act { fill: #f1f5f9; stroke: #334155; stroke-width: 1.2; }
+                  .sd-msg-text { font: 600 10.5px 'JetBrains Mono', monospace; fill: #1e293b; }
+                  .sd-note { font: 9px 'Inter', sans-serif; fill: #64748b; }
+
+                  html.dark .sd-frame { fill: #0b1120; stroke: #475569; }
+                  html.dark .sd-frame-tag { fill: #1e293b; stroke: #475569; }
+                  html.dark .sd-frame-text { fill: #cbd5e1; }
+                  html.dark .sd-frag-box { stroke: #475569; }
+                  html.dark .sd-frag-tag { fill: #1e293b; stroke: #475569; }
+                  html.dark .sd-frag-text { fill: #94a3b8; }
+                  html.dark .sd-life-box { fill: #0f172a; stroke: #94a3b8; }
+                  html.dark .sd-life-name { fill: #f8fafc; }
+                  html.dark .sd-life-line { stroke: #475569; }
+                  html.dark .sd-act { fill: #1e293b; stroke: #94a3b8; }
+                  html.dark .sd-msg-text { fill: #e2e8f0; }
+                </style>
+
+                <!-- Frame -->
+                <rect x="15" y="15" width="890" height="510" class="sd-frame"/>
+                <polygon points="15,15 15,36 340,36 355,15" class="sd-frame-tag"/>
+                <text x="25" y="29" class="sd-frame-text">sd Job Execution &amp; Control Workflow</text>
+
+                <!-- Lifelines -->
+                <!-- 1. Dashboard -->
+                <g transform="translate(60, 48)">
+                  <rect width="110" height="30" class="sd-life-box"/>
+                  <text x="55" y="19" class="sd-life-name">:Dashboard</text>
+                  <line x1="55" y1="30" x2="55" y2="465" class="sd-life-line"/>
+                </g>
+
+                <!-- 2. JobHubService -->
+                <g transform="translate(230, 48)">
+                  <rect width="140" height="30" class="sd-life-box"/>
+                  <text x="70" y="19" class="sd-life-name">:JobHubService</text>
+                  <line x1="70" y1="30" x2="70" y2="465" class="sd-life-line"/>
+                </g>
+
+                <!-- 3. SQLDatabase -->
+                <g transform="translate(420, 48)">
+                  <rect width="120" height="30" class="sd-life-box"/>
+                  <text x="60" y="19" class="sd-life-name">:JobHubDB</text>
+                  <line x1="60" y1="30" x2="60" y2="465" class="sd-life-line"/>
+                </g>
+
+                <!-- 4. RabbitMQ -->
+                <g transform="translate(590, 48)">
+                  <rect width="120" height="30" class="sd-life-box" style="stroke:#ea580c;"/>
+                  <text x="60" y="19" class="sd-life-name" style="fill:#ea580c;">:RabbitMQ</text>
+                  <line x1="60" y1="30" x2="60" y2="465" class="sd-life-line"/>
+                </g>
+
+                <!-- 5. TeamWorker -->
+                <g transform="translate(760, 48)">
+                  <rect width="130" height="30" class="sd-life-box" style="stroke:#059669;"/>
+                  <text x="65" y="19" class="sd-life-name" style="fill:#059669;">:TeamWorker</text>
+                  <line x1="65" y1="30" x2="65" y2="465" class="sd-life-line"/>
+                </g>
+
+                <!-- ================= SCENARIO 1: PUB/SUB TRIGGER ================= -->
+                <!-- UML Combined Fragment: group 1 -->
+                <rect x="25" y="95" width="870" height="195" class="sd-frag-box"/>
+                <polygon points="25,95 25,115 220,115 230,95" class="sd-frag-tag"/>
+                <text x="32" y="109" class="sd-frag-text">group [1. Job Trigger &amp; Execution]</text>
+
+                <!-- Activation bars -->
+                <rect x="110" y="115" width="10" height="25" class="sd-act"/>
+                <rect x="295" y="115" width="10" height="160" class="sd-act"/>
+                <rect x="820" y="170" width="10" height="75" class="sd-act"/>
+
+                <!-- 1: cronTrigger / Run Now -->
+                <line x1="120" y1="125" x2="295" y2="125" stroke="#0f172a" stroke-width="1.4" marker-end="url(#seq-sync)"/>
+                <text x="130" y="120" class="sd-msg-text">1: triggerJob(JobId)</text>
+
+                <!-- 2: insertStatus(QUEUED) -->
+                <line x1="305" y1="145" x2="480" y2="145" stroke="#0f172a" stroke-width="1.4" marker-end="url(#seq-sync)"/>
+                <text x="315" y="140" class="sd-msg-text">2: insertExecution(Status=QUEUED)</text>
+
+                <!-- 3: publish(JobTriggerMsg) - ASYNC (open stick arrow) -->
+                <line x1="305" y1="170" x2="650" y2="170" stroke="#ea580c" stroke-width="1.6" marker-end="url(#seq-async)"/>
+                <text x="315" y="165" class="sd-msg-text" style="fill:#ea580c;">3: publish(JobTriggerMsg)</text>
+
+                <!-- 4: deliver(JobTriggerMsg) - ASYNC -->
+                <line x1="650" y1="185" x2="820" y2="185" stroke="#ea580c" stroke-width="1.6" marker-end="url(#seq-async)"/>
+                <text x="660" y="180" class="sd-msg-text" style="fill:#ea580c;">4: deliverToSubscriber()</text>
+
+                <!-- 5: executeTask (self call) -->
+                <path d="M 830,195 C 855,195 855,215 830,215" fill="none" stroke="#059669" stroke-width="1.3" marker-end="url(#seq-sync)"/>
+                <text x="860" y="208" class="sd-msg-text" style="fill:#059669;">5: execute(CancellationToken)</text>
+
+                <!-- 6: ackCompleted(SUCCEEDED) -->
+                <line x1="820" y1="235" x2="650" y2="235" stroke="#059669" stroke-width="1.4" marker-end="url(#seq-async)"/>
+                <text x="670" y="230" class="sd-msg-text" style="fill:#059669;">6: ack(Status=SUCCEEDED)</text>
+
+                <!-- 7: notifyResult -->
+                <line x1="650" y1="250" x2="305" y2="250" stroke="#059669" stroke-width="1.4" marker-end="url(#seq-async)"/>
+                <text x="330" y="246" class="sd-msg-text" style="fill:#059669;">7: notifyCompleted(ExecId)</text>
+
+                <!-- 8: updateStatus(SUCCEEDED) -->
+                <line x1="305" y1="265" x2="480" y2="265" stroke="#0f172a" stroke-width="1.4" marker-end="url(#seq-sync)"/>
+                <text x="315" y="261" class="sd-msg-text">8: updateStatus(SUCCEEDED)</text>
+
+                <!-- 9: pushLiveStatus (return arrow) -->
+                <line x1="295" y1="280" x2="115" y2="280" stroke="#2563eb" stroke-width="1.3" stroke-dasharray="4 3" marker-end="url(#seq-reply)"/>
+                <text x="130" y="276" class="sd-msg-text" style="fill:#2563eb;">9: pushStatus(SUCCEEDED)</text>
+
+
+                <!-- ================= SCENARIO 2: REQUEST/REPLY RPC CONTROL ================= -->
+                <!-- UML Combined Fragment: opt -->
+                <rect x="25" y="305" width="870" height="195" class="sd-frag-box"/>
+                <polygon points="25,305 25,325 285,325 295,305" class="sd-frag-tag"/>
+                <text x="32" y="319" class="sd-frag-text">opt [2. Real-Time Control: Kill / Cancel Running Job]</text>
+
+                <!-- Activation bars -->
+                <rect x="110" y="330" width="10" height="25" class="sd-act"/>
+                <rect x="295" y="330" width="10" height="155" class="sd-act"/>
+                <rect x="820" y="380" width="10" height="60" class="sd-act"/>
+
+                <!-- 10: killJob(ExecutionId) -->
+                <line x1="120" y1="340" x2="295" y2="340" stroke="#dc2626" stroke-width="1.5" marker-end="url(#seq-sync)"/>
+                <text x="130" y="335" class="sd-msg-text" style="fill:#dc2626;">10: killJob(ExecutionId)</text>
+
+                <!-- 11: sendRpcRequest(KillCmd, CorrId, ReplyTo) -->
+                <line x1="305" y1="365" x2="650" y2="365" stroke="#dc2626" stroke-width="1.5" marker-end="url(#seq-sync)"/>
+                <text x="315" y="360" class="sd-msg-text" style="fill:#dc2626;">11: requestRpc(KillJobCommand, CorrId, ReplyTo)</text>
+
+                <!-- 12: dispatchCommand(KillCmd) -->
+                <line x1="650" y1="385" x2="820" y2="385" stroke="#dc2626" stroke-width="1.4" marker-end="url(#seq-cancel)"/>
+                <text x="660" y="380" class="sd-msg-text" style="fill:#dc2626;">12: dispatch(KillJobCommand)</text>
+
+                <!-- 13: cts.Cancel() (self call) -->
+                <path d="M 830,395 C 855,395 855,415 830,415" fill="none" stroke="#dc2626" stroke-width="1.3" marker-end="url(#seq-sync)"/>
+                <text x="860" y="408" class="sd-msg-text" style="fill:#dc2626;">13: cts.Cancel() [Rollback DB]</text>
+
+                <!-- 14: sendRpcResponse (Dashed reply to Reply-To queue) -->
+                <line x1="820" y1="435" x2="650" y2="435" stroke="#059669" stroke-width="1.5" stroke-dasharray="4 3" marker-end="url(#seq-reply-g)"/>
+                <text x="670" y="430" class="sd-msg-text" style="fill:#059669;">14: reply(CorrId, Status=KILLED)</text>
+
+                <!-- 15: deliverResponse (Dashed reply to JobHub) -->
+                <line x1="650" y1="455" x2="305" y2="455" stroke="#059669" stroke-width="1.5" stroke-dasharray="4 3" marker-end="url(#seq-reply-g)"/>
+                <text x="330" y="450" class="sd-msg-text" style="fill:#059669;">15: forwardReply(CorrId)</text>
+
+                <!-- 16: updateStatus(KILLED_BY_ADMIN) -->
+                <line x1="305" y1="472" x2="480" y2="472" stroke="#0f172a" stroke-width="1.4" marker-end="url(#seq-sync)"/>
+                <text x="315" y="468" class="sd-msg-text">16: updateStatus(KILLED_BY_ADMIN)</text>
+
+                <!-- 17: showStatus (Dashed reply to Dashboard) -->
+                <line x1="295" y1="488" x2="115" y2="488" stroke="#2563eb" stroke-width="1.3" stroke-dasharray="4 3" marker-end="url(#seq-reply)"/>
+                <text x="130" y="484" class="sd-msg-text" style="fill:#2563eb;">17: showStatus(TERMINATED)</text>
+              </svg>
+            </div>
+
+            <!-- ==========================================
+                 DIAGRAM 3: MERMAID CODE SPECIFICATIONS
+                 ========================================== -->
+            <div id="diag-mermaid" class="uml-pane hidden">
+              <div class="space-y-4 text-xs font-mono">
+                <div class="p-3 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-lg">
+                  <div class="font-bold text-slate-800 dark:text-slate-200 mb-2">Mermaid Component Diagram:</div>
+                  <pre class="overflow-x-auto text-slate-700 dark:text-slate-300 leading-relaxed"><code>classDiagram
+  class JobHubAdminUI {
+    &lt;&lt;component&gt;&gt;
+    +Dashboard (React)
+    +CRUD &amp; Toggle()
+    +KillJob()
+  }
+
+  class JobHubCoreService {
+    &lt;&lt;component&gt;&gt;
+    +SchedulerEngine
+    +JobStateManager
+    +RabbitPublisher
+    +RpcClient
+  }
+
+  class RabbitMQBroker {
+    &lt;&lt;component&gt;&gt;
+    +job.trigger.exchange
+    +q.job.control.requests
+    +amq.gen-reply-queue
+  }
+
+  class TeamWorkerService {
+    &lt;&lt;component&gt;&gt;
+    +MessageSubscriber
+    +BusinessLogic
+    +CancellationTokenRegistry
+    +RpcControlResponder
+  }
+
+  class JobHubDB {
+    &lt;&lt;database&gt;&gt;
+    +Jobs
+    +Schedules
+    +ExecutionLogs
+  }
+
+  JobHubAdminUI ..&gt; JobHubCoreService : &laquo;use&raquo; REST/WS
+  JobHubCoreService ..&gt; JobHubDB : &laquo;use&raquo; SQL
+  JobHubCoreService ..&gt; RabbitMQBroker : 1. Publish Trigger (Pub/Sub)
+  JobHubCoreService ..&gt; RabbitMQBroker : 3. RPC Request (Kill/Retry)
+  RabbitMQBroker ..&gt; TeamWorkerService : 2. Dispatch Trigger
+  RabbitMQBroker ..&gt; TeamWorkerService : 4. Dispatch Command
+  TeamWorkerService ..&gt; RabbitMQBroker : 5. RPC Reply (Confirmation)</code></pre>
+                </div>
+
+                <div class="p-3 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-lg">
+                  <div class="font-bold text-slate-800 dark:text-slate-200 mb-2">Mermaid Sequence Diagram:</div>
+                  <pre class="overflow-x-auto text-slate-700 dark:text-slate-300 leading-relaxed"><code>sequenceDiagram
+  autonumber
+  actor Admin as :Dashboard
+  participant Hub as :JobHubService
+  participant DB as :JobHubDB
+  participant MQ as :RabbitMQ
+  participant Worker as :TeamWorker
+
+  rect rgb(240, 249, 255)
+    Note over Admin,Worker: 1. Scheduled Job Trigger (Pub/Sub)
+    Admin-&gt;&gt;Hub: triggerJob(JobId)
+    Hub-&gt;&gt;DB: insertExecution(Status=QUEUED)
+    Hub-&gt;&gt;MQ: publish(JobTriggerMsg)
+    MQ-&gt;&gt;Worker: deliverToSubscriber()
+    Worker-&gt;&gt;Worker: execute(CancellationToken)
+    Worker--&gt;&gt;MQ: ack(Status=SUCCEEDED)
+    MQ--&gt;&gt;Hub: notifyCompleted()
+    Hub-&gt;&gt;DB: updateStatus(SUCCEEDED)
+    Hub--&gt;&gt;Admin: pushStatus(SUCCEEDED)
+  end
+
+  rect rgb(254, 242, 242)
+    Note over Admin,Worker: 2. Active Process Control (Request / Reply RPC)
+    Admin-&gt;&gt;Hub: killJob(ExecutionId)
+    Hub-&gt;&gt;MQ: requestRpc(KillJobCmd, CorrId, ReplyTo)
+    MQ-&gt;&gt;Worker: dispatch(KillJobCmd)
+    Worker-&gt;&gt;Worker: cts.Cancel() [Rollback DB]
+    Worker--&gt;&gt;MQ: reply(CorrId, Status=KILLED)
+    MQ--&gt;&gt;Hub: forwardReply(CorrId)
+    Hub-&gt;&gt;DB: updateStatus(KILLED_BY_ADMIN)
+    Hub--&gt;&gt;Admin: showStatus(TERMINATED)
+  end</code></pre>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- =======================================================================
+           PART 3: HOW IT WORKS (CÃCH THá»¨C Váº¬N HÃ€NH)
+           ======================================================================= -->
+      <section class="section-container">
+        <div class="section-header">
+          <div class="section-icon">
+            <svg class="w-5 h-5 text-emerald-600 dark:text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+            </svg>
+          </div>
+          <div>
+            <h2 class="section-title">Part 3: Operational Mechanics</h2>
+            <p class="text-xs text-slate-500 dark:text-slate-400 font-mono">Quy trÃ¬nh váº­n hÃ nh 4 bÆ°á»›c cá»§a há»‡ thá»‘ng</p>
+          </div>
+        </div>
+
+        <div class="space-y-4">
+
+          <!-- Step 1 -->
+          <div class="workflow-step">
+            <div class="step-num-badge">1</div>
+            <div class="space-y-1">
+              <h3 class="text-sm sm:text-base font-bold text-slate-900 dark:text-white">
+                Job Administration &amp; Scheduling (Quáº£n trá»‹ &amp; LÃªn lá»‹ch)
+              </h3>
+              <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                Táº¥t cáº£ job Ä‘Æ°á»£c Ä‘Äƒng kÃ½ táº­p trung táº¡i Job Hub vá»›i biá»ƒu thá»©c Cron, thÃ´ng sá»‘ cháº¡y, vÃ  danh sÃ¡ch nháº­n email. Teams tra cá»©u trÆ°á»›c khi táº¡o job má»›i Ä‘á»ƒ trÃ¡nh trÃ¹ng láº·p. Khi job khÃ´ng cÃ²n dÃ¹ng, chá»‰ cáº§n gáº¡t nÃºt <strong>Disable</strong> trÃªn Dashboard Ä‘á»ƒ táº¯t ngay, khÃ´ng lÃ£ng phÃ­ tÃ i nguyÃªn.
+              </p>
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="workflow-step">
+            <div class="step-num-badge">2</div>
+            <div class="space-y-1">
+              <h3 class="text-sm sm:text-base font-bold text-slate-900 dark:text-white">
+                Decoupled Job Trigger via Pub/Sub (KÃ­ch hoáº¡t qua Pub/Sub)
+              </h3>
+              <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                Äáº¿n giá» cháº¡y (hoáº·c khi báº¥m <em>"Run Now"</em>), Job Hub táº¡o <code class="text-xs font-mono font-semibold">ExecutionId</code>, lÆ°u tráº¡ng thÃ¡i <code class="text-xs font-mono">QUEUED</code> vÃ o DB vÃ  publish message vÃ o Topic Exchange trÃªn RabbitMQ. Job Hub khÃ´ng cháº¡y logic nghiá»‡p vá»¥; Service cá»§a tá»«ng team Ä‘Ã³ng vai trÃ² Subscriber, nháº­n message tá»« queue Ä‘á»ƒ tá»± cháº¡y logic (collect data, gá»­i email bÃ¡o cÃ¡o).
+              </p>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="workflow-step">
+            <div class="step-num-badge">3</div>
+            <div class="space-y-1">
+              <h3 class="text-sm sm:text-base font-bold text-slate-900 dark:text-white">
+                Real-Time Control via Request/Reply RPC (Äiá»u khiá»ƒn thá»i gian thá»±c: Kill / Retry)
+              </h3>
+              <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                Äá»ƒ kill hoáº·c retry má»™t job Ä‘ang cháº¡y, Job Hub gá»­i request message kÃ¨m <code class="text-xs font-mono font-semibold">CorrelationId</code> vÃ  <code class="text-xs font-mono font-semibold">ReplyTo</code> callback queue. Worker nháº­n lá»‡nh, tra cá»©u <code class="text-xs font-mono font-semibold">CancellationTokenSource</code> tÆ°Æ¡ng á»©ng Ä‘á»ƒ gá»i <code class="text-xs font-mono">cts.Cancel()</code> (rollback DB an toÃ n, ngáº¯t task Ä‘ang cháº¡y), rá»“i respond xÃ¡c nháº­n vá» ReplyTo queue. Job Hub Ä‘á»‘i soÃ¡t CorrelationId vÃ  cáº­p nháº­t tráº¡ng thÃ¡i Dashboard tá»©c thÃ¬.
+              </p>
+            </div>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="workflow-step">
+            <div class="step-num-badge">4</div>
+            <div class="space-y-1">
+              <h3 class="text-sm sm:text-base font-bold text-slate-900 dark:text-white">
+                Observability &amp; Audit Trail (GiÃ¡m sÃ¡t &amp; Ghi log)
+              </h3>
+              <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                Dashboard hiá»ƒn thá»‹ tráº¡ng thÃ¡i thá»i gian thá»±c cá»§a má»i job: <code class="text-xs font-mono">QUEUED &rarr; RUNNING &rarr; SUCCEEDED / FAILED / KILLED</code>. ToÃ n bá»™ lá»‹ch sá»­ cháº¡y, thá»i gian thá»±c thi, lá»—i phÃ¡t sinh vÃ  ngÆ°á»i thá»±c hiá»‡n thao tÃ¡c Ä‘á»u Ä‘Æ°á»£c ghi log Ä‘áº§y Ä‘á»§.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+    </div><!-- End #tab-job-hub -->
+
   </main>
 
   <!-- Footer -->
   <footer class="no-print mt-16 border-t border-slate-200 dark:border-slate-800 py-8 text-center text-xs text-slate-500 dark:text-slate-400">
     <div class="max-w-5xl mx-auto px-4 space-y-2">
-      <p>© 2026 Phillip. Designed for Staff Software Engineer & System Architect roles.</p>
-      <p class="font-mono">Ready to deploy on GitHub Pages · Zero Build Dependencies</p>
+      <p>Â© 2026 Phillip. Designed for Staff Software Engineer & System Architect roles.</p>
+      <p class="font-mono">Ready to deploy on GitHub Pages Â· Zero Build Dependencies</p>
     </div>
   </footer>
 
