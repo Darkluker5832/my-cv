@@ -16,7 +16,7 @@ const portfolioTranslations = {
   "Bắt đầu sự nghiệp ở vị trí fresher sau khi tốt nghiệp; chủ yếu phát triển các chức năng theo yêu cầu và đặc tả của dự án.": "Started my career as a graduate engineer, primarily implementing features according to project requirements and specifications.",
   "Hệ thống nghiệp vụ lõi của công ty, phục vụ phần lớn hoạt động vận hành hằng ngày. Các chức năng chính gồm quản lý khách hàng, hoa hồng, báo cáo và thêm hoặc cập nhật dữ liệu hàng loạt.": "A core business system supporting most day-to-day operations, including customer management, commissions, reporting, and bulk data inserts and updates.",
   "Hệ thống báo cáo dành riêng cho các Super VIP customers, cung cấp báo cáo tổng hợp cấp cao và hỗ trợ các yêu cầu phát sinh liên quan đến dữ liệu khách hàng nhạy cảm.": "A dedicated reporting system for Super VIP customers, providing high-level consolidated reports and handling ad hoc requests involving sensitive customer data.",
-  "Các dự án tiêu biểu": "Selected projects",
+  "Các dự án tiêu biểu": "Key Projects",
   "Role: Technical Lead — Web & Database · 2015 — 2017 · Team 5 người": "Role: Technical Lead — Web & Database · 2015 — 2017 · Team of 5",
   "Nền tảng tập trung jobs/tasks nội bộ, hỗ trợ quản lý lịch, Run/Stop/Cancel và tự động gửi email thông báo cho người phụ trách khi hoàn tất.": "A centralized platform for internal jobs and tasks, with scheduling, Run/Stop/Cancel controls, and automatic completion emails to the person in charge.",
   "Đóng góp:": "Contributions:",
