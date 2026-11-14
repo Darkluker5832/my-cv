@@ -413,6 +413,17 @@ Object.assign(portfolioTranslations, {
   "Một ứng dụng chung, cấu hình theo product": "A shared application configured per product",
   "Khoảng 20 sản phẩm mới được tích hợp": "Around 20 new products integrated"
 });
+// Architecture overview labels.
+Object.assign(portfolioTranslations, {
+  "Tổng quan kiến trúc Mail Station": "Mail Station architecture overview",
+  "Admin quản trị và giám sát, lưu cấu hình và trạng thái trong SQL Server. RabbitMQ kết nối Admin với các Client thực thi job theo team. Thư viện email sử dụng SMTP server.": "Admin manages and monitors jobs, storing configuration and status in SQL Server. RabbitMQ connects Admin to team-owned Clients that execute jobs. The email library uses an SMTP server.",
+  "Quản trị & giám sát": "Administration & monitoring",
+  "Kết nối messaging": "Messaging",
+  "Lập lịch & thực thi job": "Scheduling & job execution",
+  "Cấu hình & trạng thái": "Configuration & status",
+  "Gửi email": "Email delivery",
+  "Sơ đồ tổng quan thể hiện các thành phần và kết nối chính ở mức logic. Chi tiết từng luồng nghiệp vụ nằm trong các sequence diagram bên dưới.": "This overview shows the main components and logical connections. The sequence diagrams below describe each workflow in detail."
+});
 (() => {
   const textEntries = [];
   const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
