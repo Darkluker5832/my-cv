@@ -1,27 +1,36 @@
-# Thinh Truong — CV & Mail Station case study
+# Trương Huy Thịnh — Engineering Portfolio
 
-Website tĩnh, không cần build hoặc thư viện ngoài. Mở `index.html` bằng trình duyệt. Bốn tab hỗ trợ bàn phím, URL hash, mobile và in PDF. Sơ đồ UML là SVG inline, chạy offline.
+Portfolio tĩnh bằng HTML/CSS/JavaScript, hỗ trợ VI/EN, bàn phím, mobile và in PDF. Mở `index.html` để xem. Không cần build hoặc thư viện ngoài.
 
-Tab Customer Setting (`#customer-setting-case`) trình bày component và sequence diagram cho cả luồng cũ clone DB/FE/BE lẫn luồng mới cấu hình Product ID → Setting Type IDs. Nội dung và nhãn sơ đồ hỗ trợ VI/EN. Các sơ đồ ở mức logic; ID trong ví dụ không ánh xạ tới tên Setting Type cụ thể.
+## Cấu trúc và triển khai
 
-## Nội dung
+`../index.html` và `../i18n.js` ở root là bản phục vụ GitHub Pages. `portfolio-v2/` giữ bản tương ứng; cập nhật hai bản cùng nhau. GitHub Actions trong `.github/workflows/deploy.yml` triển khai root khi push lên `main`.
 
-Thông tin cá nhân, kinh nghiệm, dự án, học vấn, chứng chỉ và giải thưởng cập nhật theo CV PDF do người dùng cung cấp. Không đưa ngày sinh lên portfolio công việc. Chứng chỉ AWS được ghi ngày cấp 10/2023, không khẳng định hiệu lực hiện tại. Phần kiến trúc Mail Station dựa trên mô tả bổ sung của người dùng.
+## Bố cục case study
 
-## Đưa lên GitHub Pages
+Cả Mail Station, Data Warehouse và Customer Setting dùng cùng sáu phần:
 
-Cách đơn giản: đưa nội dung thư mục này vào root một repository riêng, commit và push. Trong Settings → Pages chọn Deploy from a branch, branch chứa code và thư mục `/ (root)`.
+1. Bối cảnh & khó khăn hiện tại
+2. Hệ thống cũ
+3. Giải pháp cải tiến
+4. Vai trò cá nhân
+5. Hệ thống mới ra đời
+6. Outcome
 
-Nếu giữ trong repository MyCV hiện tại và Pages đang phục vụ root, bản này nằm dưới đường dẫn `/portfolio-v2/`. Không thay đổi workflow hoặc website cũ trong lần chỉnh sửa này.
+Phần giải pháp giải thích hướng thay đổi; phần hệ thống mới trình bày thành phần và luồng thực tế sau triển khai. Giữ rõ đóng góp cá nhân và kết quả phối hợp toàn dự án. Số đo hiệu năng là xấp xỉ theo thông tin người dùng xác nhận.
 
-## Biên tập
+## Mail Station
 
-HTML, CSS và logic tab nằm trong `index.html`. Bản dịch và logic chuyển ngôn ngữ nằm trong `i18n.js`; cần triển khai cả file này cùng website. Tab hồ sơ dùng thông tin từ CV có sẵn; không kế thừa các con số hiệu quả chưa được xác nhận. Mail Station được tổ chức thành overview, component UML và ba luồng runtime. Các message names là tên minh họa. Các cơ chế chưa xác nhận được ghi rõ trong case study.
+Client khởi động: clear message cũ của cron/Run/Stop/Cancel, rồi lấy job info và cron mới nhất qua Request/Response. Admin phải sẵn sàng trước để phản hồi. Pub/Sub dùng cho đổi cron, Run, Stop/Cancel và heartbeat. JobTask kiểm tra `cancellationToken` và truyền vào async method hỗ trợ hủy. Client publish heartbeat mỗi phút; Admin lưu thời điểm nhận theo Job ID. Job List hiển thị Not Available khi heartbeat quá 5 phút. Không đồng nhất trạng thái này với xác nhận process đã chết.
 
-Request/Response: Client hỏi, Admin xử lý và trả lời qua broker. Pub/Sub: Admin phát cấu hình, Client nhận và đăng ký local cron. Không diễn giải broker thành nơi lưu cấu hình nghiệp vụ hoặc scheduler.
+Các sequence diagram mô tả luồng logic, không phải đặc tả message contract. Không suy diễn TTL, replay, queue durability hoặc cơ chế tự phục hồi chưa được xác nhận. Luồng báo kết quả không gán pattern cụ thể.
 
-Tham khảo về queue / binding và message durability: https://www.rabbitmq.com/tutorials/amqp-concepts và https://www.rabbitmq.com/docs/queues.
+## Ngôn ngữ và chỉnh sửa
 
-## Ngôn ngữ
+Nội dung, SVG và logic tab nằm trong `index.html`; bản dịch trong `i18n.js`. Khi thêm nội dung, thêm nguyên văn text node tiếng Việt làm khóa trong `portfolioTranslations`. Nút VI/EN giữ nguyên tab và luồng đang xem; lựa chọn ngôn ngữ được lưu trong localStorage nếu có thể. Mặc định khi chưa lưu lựa chọn là tiếng Anh.
 
-Nút VI / EN ở đầu trang chuyển ngôn ngữ hồ sơ, hai case study và nhãn SVG mà không đổi tab hoặc luồng đang xem. Mặc định là tiếng Việt; lựa chọn được lưu trong localStorage khi trình duyệt cho phép. Khi bổ sung nội dung, cập nhật từ điển `portfolioTranslations` trong `i18n.js`, dùng nguyên văn tiếng Việt làm khóa. Tên riêng và tên công nghệ được giữ nguyên. Ảnh Customer Setting là ảnh tĩnh gốc; alt text có bản dịch.
+Customer Setting giữ component và sequence diagram cũ/mới ở mức logic. Các ID là ví dụ; không suy ra schema hoặc topology vật lý. Data Warehouse thể hiện ranh giới web/service và phần database do team DB phụ trách.
+
+## In PDF
+
+Chọn In / Lưu PDF hoặc Ctrl+P. Print stylesheet mở toàn bộ case study và luồng Mail Station; bật background graphics để giữ màu sơ đồ.
