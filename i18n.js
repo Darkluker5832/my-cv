@@ -424,6 +424,24 @@ Object.assign(portfolioTranslations, {
   "Gửi email": "Email delivery",
   "Sơ đồ tổng quan thể hiện các thành phần và kết nối chính ở mức logic. Chi tiết từng luồng nghiệp vụ nằm trong các sequence diagram bên dưới.": "This overview shows the main components and logical connections. The sequence diagrams below describe each workflow in detail."
 });
+// Confirmed hands-on responsibilities and delivery boundaries.
+Object.assign(portfolioTranslations, {
+  "Phát triển phần mềm từ năm 2010, chuyên .NET/C# và hệ thống backend. Thiết kế giải pháp, trực tiếp xây dựng chức năng cốt lõi, viết unit test và hướng dẫn developers trong các dự án hiện đại hóa ứng dụng nghiệp vụ trên hạ tầng on-premises.": "Software development experience since 2010, specializing in .NET/C# and backend systems. Designs solutions, implements core functionality, writes unit tests, and guides developers in modernizing business applications on on-premises infrastructure.",
+  "Thiết kế hệ thống, phối hợp với PM/BA để thống nhất giải pháp và trực tiếp xây dựng nền tảng ban đầu cùng chức năng cốt lõi. Hướng dẫn developers, review code và viết unit test bằng xUnit theo yêu cầu code coverage tối thiểu 80%.": "Designed systems, aligned solutions with PM/BA, and implemented the initial application foundation and core functionality. Guided developers, reviewed code, and wrote xUnit tests under a minimum 80% code coverage requirement.",
+  "Phụ trách kỹ thuật phía web của Customer Setting. Thiết kế configuration-driven ở giai đoạn đầu; từ năm 2024, triển khai migration từ Angular/.NET Framework 4 sang React/.NET 8, phối hợp với các team Database, QC và PM/BA.": "Led web technical design for Customer Setting. Established the configuration-driven design in the initial phase; from 2024, implemented migration from Angular/.NET Framework 4 to React/.NET 8 in collaboration with Database, QC, and PM/BA teams.",
+  "Phụ trách kỹ thuật phía web trong chương trình hiện đại hóa Customer Setting theo định hướng của ban giám đốc. Thiết kế configuration-driven được xây dựng ở giai đoạn đầu; migration công nghệ bắt đầu từ năm 2024. Trực tiếp xây dựng backend .NET 8 Minimal APIs, khởi tạo frontend React và hướng dẫn web developers triển khai; phối hợp với các team Database, QC và PM/BA.": "Led web technical design for the management-directed Customer Setting modernization initiative. The configuration-driven design was established in the initial phase; technology migration began in 2024. Built the .NET 8 Minimal APIs backend, initialized the React frontend, and guided web developers in collaboration with Database, QC, and PM/BA teams.",
+  "Trực tiếp phối hợp với các team phát triển nước ngoài để xác định và làm rõ yêu cầu, thống nhất kỹ thuật, coding và debugging. PM phụ trách trao đổi với khách hàng.": "Worked directly with overseas development teams to define and clarify requirements, align technical implementation, code, and debug. PMs handled customer communication.",
+  "Phối hợp trực tiếp với DevOps để setup triển khai và đưa ứng dụng qua các môi trường Local, UAT, Staging và Production; hỗ trợ sau phát hành. Team DevOps xây dựng CI/CD pipeline; team QC phụ trách integration testing.": "Worked directly with DevOps to set up deployments and release applications across Local, UAT, Staging, and Production environments, with post-release support. The DevOps team built CI/CD pipelines; the QC team handled integration testing.",
+  "yêu cầu code coverage tối thiểu 80%.": "minimum 80% code coverage requirement.",
+  "Triển khai trên hạ tầng on-premises; phối hợp DevOps setup deployment và sử dụng quy trình GitLab CI/CD. CI/CD pipeline do team DevOps xây dựng.": "On-premises application deployment; collaborated with DevOps on deployment setup and used GitLab CI/CD workflows. Pipelines were built by the DevOps team."
+});
+// Confirmed employment end date and cloud-learning context.
+Object.assign(portfolioTranslations, {
+  "01/2020 — 01/2025": "01/2020 — 01/2025",
+  "Role: Web Technical Lead · 01/2020 — 01/2025": "Role: Web Technical Lead · 01/2020 — 01/2025",
+  "Công ty giải thể vào 01/2025.": "The company ceased operations in January 2025.",
+  "Học và đạt chứng chỉ để chuẩn bị cho định hướng chuyển lên cloud của công ty từ năm 2023. Hệ thống thực tế vẫn chạy on-premises; kế hoạch cloud chưa được triển khai trước khi công ty giải thể vào 01/2025.": "Studied for and earned the certification to prepare for the company’s cloud direction from 2023. Applications remained on-premises; the cloud plan had not been implemented when the company ceased operations in January 2025."
+});
 (() => {
   const textEntries = [];
   const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
