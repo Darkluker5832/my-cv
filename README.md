@@ -33,4 +33,6 @@ Customer Setting giữ component và sequence diagram cũ/mới ở mức logic.
 
 ## In PDF
 
-Chọn In / Lưu PDF hoặc Ctrl+P. Print stylesheet mở toàn bộ case study và luồng Mail Station; bật background graphics để giữ màu sơ đồ.
+Chọn CV tiếng Anh / PDF để tải bản CV ngắn một cột trong `output/pdf/Thinh-Truong-CV.pdf`. Chọn In portfolio / PDF để in toàn bộ case study theo thứ tự Customer Setting, Mail Station, Data Warehouse. Ctrl+P mặc định chỉ in hồ sơ. Bật background graphics khi in portfolio để giữ màu sơ đồ.
+
+Sau khi sửa nội dung HTML hoặc bản dịch, chạy `node scripts/export-translations.cjs` rồi `python scripts/build_cv_pdf.py` để cập nhật PDF. Script PDF cần reportlab và pymupdf; dùng Arial trên Windows hoặc DejaVu Sans khi có trên Linux. PDF tiếng Anh lấy dữ liệu từ cùng HTML và từ điển VI/EN; không thêm kinh nghiệm chưa xác nhận.

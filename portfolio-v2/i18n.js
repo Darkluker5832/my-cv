@@ -478,6 +478,12 @@ Object.assign(portfolioTranslations, {
   "Tích hợp ứng dụng với hạ tầng HA do team DevOps phụ trách.": "Integrated applications with HA infrastructure managed by the DevOps team.",
   "Technical Lead — Web & Database, team 5 người. Khởi tạo dự án, nghiên cứu và lựa chọn công nghệ; trực tiếp thiết kế và triển khai messaging bằng RabbitMQ/EasyNetQ cho lấy cấu hình, cập nhật cron, điều khiển job và heartbeat. Triển khai chức năng cốt lõi, thiết kế đặc tả các trang và chức năng, hỗ trợ thành viên và cập nhật tiến độ cho Manager.": "Technical Lead — Web & Database in a team of 5. Initiated the project, researched and selected technologies, and designed and implemented RabbitMQ/EasyNetQ messaging for configuration retrieval, cron updates, job control, and heartbeats. Built core functionality, specified pages and features, supported team members, and reported progress to the Manager."
 });
+// Concise skills, early-career contribution, and separate CV/portfolio exports.
+Object.assign(portfolioTranslations, {
+  "Phát triển các trang báo cáo và chức năng nghiệp vụ trên nền tảng .NET theo yêu cầu và đặc tả của dự án.": "Developed .NET reporting pages and business features based on project requirements and specifications.",
+  "CV tiếng Anh / PDF ↓": "English CV / PDF ↓",
+  "In portfolio / PDF ↗": "Print portfolio / PDF ↗"
+});
 (() => {
   const textEntries = [];
   const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
