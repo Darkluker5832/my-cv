@@ -484,6 +484,14 @@ Object.assign(portfolioTranslations, {
   "CV tiếng Anh / PDF ↓": "English CV / PDF ↓",
   "In portfolio / PDF ↗": "Print portfolio / PDF ↗"
 });
+// Explicit hands-on contributions and consistent past-tense project copy.
+Object.assign(portfolioTranslations, {
+  "Trực tiếp xây dựng backend .NET 8 Minimal APIs, khởi tạo frontend React và hướng dẫn web developers trong giai đoạn hiện đại hóa từ năm 2024.": "Built the .NET 8 Minimal APIs backend, initialized the React frontend, and guided web developers during modernization starting in 2024.",
+  "Phụ trách kỹ thuật phía web của Customer Setting qua hai giai đoạn: thiết kế configuration-driven để giảm công sức tích hợp product; từ năm 2024, chuyển Angular/.NET Framework 4 sang React/.NET 8 theo định hướng Docker/Kubernetes và Linux on-premises.": "Led web technical design across two phases: configuration-driven product integration, then application modernization from 2024. Migrated Angular/.NET Framework 4 to React/.NET 8 in line with the company’s Docker/Kubernetes and on-premises Linux direction.",
+  "Phối hợp với PM/BA làm rõ yêu cầu, thống nhất phạm vi và review phần web trong đặc tả do BA viết. Hướng dẫn junior/senior developers khi bắt đầu task, review code và phụ trách triển khai production.": "Worked with PMs and BAs to clarify requirements and agree on scope; reviewed web-related specifications, guided junior and senior developers, reviewed code, and handled production deployment.",
+  "Làm rõ yêu cầu với PM/BA và review nội dung liên quan đến web trong đặc tả của BA; hướng dẫn junior/senior developers, review code và phụ trách triển khai production.": "Clarified requirements with PMs and BAs, reviewed web-related specifications, guided junior and senior developers, reviewed code, and handled production deployment.",
+  "Khởi tạo dự án, chọn công nghệ; trực tiếp thiết kế và triển khai RabbitMQ/EasyNetQ cho lấy cấu hình, cập nhật cron, điều khiển job và heartbeat; dẫn dắt đội 5 người.": "Initiated the project and selected technologies. Designed and implemented RabbitMQ/EasyNetQ messaging for configuration retrieval, cron updates, job control, and heartbeats; led a team of 5."
+});
 (() => {
   const textEntries = [];
   const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {

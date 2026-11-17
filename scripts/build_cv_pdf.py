@@ -53,8 +53,8 @@ pdfmetrics.registerFontFamily('CV',normal='CV',bold='CVBold',italic='CV',boldIta
 styles={
  'name':ParagraphStyle('name',fontName='CVBold',fontSize=23,leading=28,spaceAfter=3),
  'title':ParagraphStyle('title',fontName='CVBold',fontSize=12,leading=16,spaceAfter=6),
- 'body':ParagraphStyle('body',fontName='CV',fontSize=9.5,leading=13,spaceAfter=5),
- 'small':ParagraphStyle('small',fontName='CV',fontSize=9,leading=12,spaceAfter=5),
+ 'body':ParagraphStyle('body',fontName='CV',fontSize=9.5,leading=12.5,spaceAfter=4),
+ 'small':ParagraphStyle('small',fontName='CV',fontSize=9,leading=11.5,spaceAfter=4),
  'section':ParagraphStyle('section',fontName='CVBold',fontSize=12,leading=16,spaceBefore=11,spaceAfter=7,textColor=HexColor('#17644e'),keepWithNext=True),
  'job':ParagraphStyle('job',fontName='CVBold',fontSize=10,leading=14,spaceBefore=5,spaceAfter=4,keepWithNext=True),
 }
@@ -66,6 +66,8 @@ def add(value,style='body'): story.append(para(value,style))
 name=next(profile.find('h1')).text().split('.')[0]
 add(name,'name'); add('Staff Software Engineer | .NET Backend & Technical Leadership','title')
 add('Ho Chi Minh City, Vietnam | tht5832@gmail.com | +84 933 772 668','small')
+portfolio=next(a.attrs['href'] for a in profile.find('a') if a.attrs.get('href','').startswith('https://darkluker5832.github.io/'))
+story.append(Paragraph('Portfolio: <link href="'+escape(portfolio)+'" color="#17644e"><u>'+escape(portfolio)+'</u></link>',styles['small']))
 add('PROFESSIONAL SUMMARY','section'); add(next(profile.find('p',**{'class':'lead'})).text())
 add('TECHNICAL SKILLS','section')
 skills=next(profile.find('ul',**{'class':'tech-stacks'}))
