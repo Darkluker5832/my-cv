@@ -263,7 +263,6 @@ Object.assign(portfolioTranslations, {
 // Unified case-study structure and user-confirmed implementation details.
 Object.assign(portfolioTranslations, {
   "Mỗi team tự quản lý internal jobs theo công cụ riêng. Khi cần kiểm tra hoặc ngừng các job liên quan đến một đối tác, công ty không có danh mục tập trung để xác định đầy đủ các tác vụ đang chạy.": "Each team managed internal jobs with its own tools. When jobs for a partner needed to be reviewed or stopped, the company lacked a central inventory to identify every active task.",
-  "Đã có trường hợp hợp đồng với đối tác kết thúc nhưng không xác định được hết các job vẫn thu thập và gửi dữ liệu cho họ, dẫn đến rò rỉ dữ liệu công ty.": "In one case, after a partner contract ended, jobs that continued collecting and sending data could not all be identified, resulting in company data leakage.",
   "01 / Bối cảnh & khó khăn hiện tại": "01 / Context & current challenges",
   "Các job phân tán, thiếu một nơi kiểm soát": "Distributed jobs without a central view",
   "Các team chủ yếu dùng Windows Task Scheduler để chạy tác vụ nội bộ; lịch và cách vận hành nằm rải rác theo từng team.": "Teams primarily used Windows Task Scheduler for internal tasks, with schedules and operations spread across teams.",
@@ -464,6 +463,10 @@ Object.assign(portfolioTranslations, {
   "02 — Customer Setting": "02 — Customer Setting",
   "03 — Mail Station": "03 — Mail Station",
   "04 — Data Warehouse": "04 — Data Warehouse"
+});
+// Public case study focuses on the operational risk.
+Object.assign(portfolioTranslations, {
+  "Khi hợp đồng với đối tác kết thúc, việc thiếu danh mục job tập trung gây khó khăn cho việc xác định và ngừng toàn bộ tác vụ liên quan, tạo rủi ro tiếp tục gửi dữ liệu sau khi hợp đồng đã hết hiệu lực.": "When a partner contract ended, the lack of a central job inventory made it difficult to identify and stop every related task, creating a risk of continued data delivery after the contract had expired."
 });
 (() => {
   const textEntries = [];
