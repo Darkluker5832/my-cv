@@ -468,6 +468,16 @@ Object.assign(portfolioTranslations, {
 Object.assign(portfolioTranslations, {
   "Khi hợp đồng với đối tác kết thúc, việc thiếu danh mục job tập trung gây khó khăn cho việc xác định và ngừng toàn bộ tác vụ liên quan, tạo rủi ro tiếp tục gửi dữ liệu sau khi hợp đồng đã hết hiệu lực.": "When a partner contract ended, the lack of a central job inventory made it difficult to identify and stop every related task, creating a risk of continued data delivery after the contract had expired."
 });
+// Hands-on implementation, distributed caching, and HA integration scope.
+Object.assign(portfolioTranslations, {
+  "Trực tiếp xây dựng backend và APIs bằng .NET 8.": "Built backend functionality and APIs with .NET 8.",
+  "Trực tiếp thiết kế và triển khai xử lý qua hàng đợi, hỗ trợ mở rộng số worker.": "Designed and implemented queue-based processing to support scaling the number of workers.",
+  "Trực tiếp thiết kế và triển khai messaging bằng RabbitMQ/EasyNetQ.": "Designed and implemented messaging with RabbitMQ/EasyNetQ.",
+  "Chia sẻ dữ liệu cache giữa các worker process trong web garden.": "Shared cached data across worker processes in a web garden.",
+  "Triển khai ứng dụng trên hạ tầng on-premises, phối hợp DevOps setup deployment và sử dụng quy trình GitLab CI/CD.": "Deployed applications on-premises, collaborating with DevOps on deployment setup and using GitLab CI/CD workflows.",
+  "Tích hợp ứng dụng với hạ tầng HA do team DevOps phụ trách.": "Integrated applications with HA infrastructure managed by the DevOps team.",
+  "Technical Lead — Web & Database, team 5 người. Khởi tạo dự án, nghiên cứu và lựa chọn công nghệ; trực tiếp thiết kế và triển khai messaging bằng RabbitMQ/EasyNetQ cho lấy cấu hình, cập nhật cron, điều khiển job và heartbeat. Triển khai chức năng cốt lõi, thiết kế đặc tả các trang và chức năng, hỗ trợ thành viên và cập nhật tiến độ cho Manager.": "Technical Lead — Web & Database in a team of 5. Initiated the project, researched and selected technologies, and designed and implemented RabbitMQ/EasyNetQ messaging for configuration retrieval, cron updates, job control, and heartbeats. Built core functionality, specified pages and features, supported team members, and reported progress to the Manager."
+});
 (() => {
   const textEntries = [];
   const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
