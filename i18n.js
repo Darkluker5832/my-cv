@@ -534,13 +534,11 @@ Object.assign(portfolioTranslations, {
   "Nền tảng có sẵn, bao gồm các tích hợp legacy": "An existing platform with legacy integrations",
   "Bổ sung game mới bằng .NET 8 APIs và migrate các game cũ từ .NET Framework 4 sang .NET 8 theo yêu cầu của dự án.": "Added new games using .NET 8 APIs and migrated legacy game integrations from .NET Framework 4 to .NET 8 according to project requirements.",
   "Tích hợp & migration": "Integration & migration",
-  "Hệ thống sử dụng Kafka để lưu event stream của request; consumer chuyển dữ liệu log qua Logstash, tra cứu trên Kibana để thấy các service và tham số liên quan khi debug.": "The platform used Kafka for request event streams; a consumer fed logs through Logstash for inspection in Kibana, helping trace involved services and parameters during debugging.",
   "Tracing xuyên service": "Cross-service tracing",
   "Các job định kỳ so sánh dữ liệu Vendor, Game Aggregator và Licensee theo lịch riêng của từng Vendor. Mismatch được cảnh báo vào Telegram room tương ứng để các bên kiểm tra thủ công.": "Scheduled jobs compared Vendor, Game Aggregator, and Licensee data using Vendor-specific schedules. Mismatches triggered alerts to the relevant Telegram rooms for manual investigation.",
   "Đối soát theo Vendor": "Vendor-specific reconciliation",
   "03 / Giải pháp cải tiến": "03 / Improvement approach",
   "Tích hợp game mới, migrate từng phần và hỗ trợ vận hành": "Integrate new games, migrate incrementally, and support operations",
-  "Trực tiếp tích hợp thêm game mới và migrate game cũ từ .NET Framework 4 sang .NET 8 với vai trò full-stack developer. Làm việc trong hệ thống gồm nhiều service và sử dụng luồng tracing Kafka/Logstash/Kibana để theo dõi request, hỗ trợ coding và debugging.": "Integrated new games and migrated legacy game functionality from .NET Framework 4 to .NET 8 as a full-stack developer. Worked within a multi-service system and used Kafka/Logstash/Kibana request tracing to support implementation and debugging.",
   "Kiến trúc và cơ chế tracing/đối soát là các thành phần có sẵn của nền tảng; đóng góp cá nhân tập trung vào các tích hợp và thay đổi được giao.": "The architecture and tracing/reconciliation mechanisms were existing platform capabilities; my individual contribution focused on assigned integrations and changes.",
   "04 / Vai trò cá nhân": "04 / Individual contribution",
   "Full-stack trong hệ thống có sẵn": "Full-stack development within the existing system",
@@ -549,7 +547,6 @@ Object.assign(portfolioTranslations, {
   "Người chơi có thể là khách vãng lai hoặc thuộc một đại lý; đăng ký và đăng nhập qua Game Portal. Luồng đăng ký gắn playerId với Licensee để phục vụ report/billing. Portal gửi yêu cầu launch qua Game Aggregator tới Vendor; Vendor xử lý các event trong game và gửi kết quả về Aggregator. Aggregator lưu SQL DB rồi chuyển kết quả tới Licensee để họ đối chiếu hoặc lưu trong hệ thống riêng.": "Players could be walk-in users or belong to an agent, registering and logging in through a Game Portal. Registration associated a playerId with a Licensee for reporting and billing. The Portal sent launch requests through Game Aggregator to the Vendor. Vendors processed in-game events and returned results; Aggregator persisted results in SQL DB and forwarded them to Licensees for verification or storage in their own systems.",
   "Sơ đồ thể hiện liên kết playerId–Licensee về mặt nghiệp vụ, không khẳng định service nào tạo tài khoản hoặc quản lý thông tin đăng nhập. Các mũi tên là trao đổi logic, không chỉ định giao thức hay kiểu message chưa được xác nhận.": "The diagram shows the business association between playerId and Licensee without assigning account creation or credential ownership to a specific service. Arrows represent logical exchanges, not an unconfirmed protocol or message type.",
   "Tracing request & cảnh báo mismatch": "Request tracing & mismatch alerts",
-  "Kafka phục vụ lưu vết request đi qua các service nội bộ. Logstash và Kibana nằm trong luồng log để hỗ trợ điều tra; sơ đồ không mô tả đầy đủ tầng lưu trữ log. Các job đối soát là luồng riêng, chạy theo lịch và múi giờ của từng Vendor, gửi cảnh báo Telegram khi có sai lệch để kiểm tra thủ công.": "Kafka supported tracing requests across internal services. Logstash and Kibana formed part of the logging workflow; the diagram does not depict the full log-storage layer. Reconciliation was a separate workflow, scheduled around each Vendor’s timing and time zone, with Telegram alerts for manual investigation of mismatches.",
   "05 / Hệ thống mới ra đời": "05 / New system",
   "Từ Game Portal đến Vendor và đối soát kết quả": "From Game Portal to Vendor and result reconciliation",
   "Quy mô tích hợp chung của nền tảng, kết hợp game bên ngoài và game do công ty phát triển.": "Overall platform integration scope, combining external content and company-developed games.",
@@ -563,7 +560,6 @@ Object.assign(portfolioTranslations, {
   "Mở rộng tích hợp trên nền tảng khoảng 20 Vendor": "Extended integrations on a platform of around 20 Vendors",
   "Nền tảng phân phối game giữa Vendor và Licensee, quy mô khoảng 20 Vendor và gần 1.000 game.": "A game distribution platform connecting Vendors and Licensees, with around 20 Vendors and nearly 1,000 games.",
   "Đóng góp:": "Contributions:",
-  "Full-stack: tích hợp game mới và migrate game legacy từ .NET Framework 4 sang .NET 8; sử dụng Kafka/Logstash/Kibana để truy vết request và debug.": "Full-stack: integrated new games and migrated legacy game functionality from .NET Framework 4 to .NET 8; used Kafka/Logstash/Kibana to trace requests and debug.",
   "03 — Game Aggregator": "03 — Game Aggregator",
   "04 — Mail Station": "04 — Mail Station",
   "05 — Data Warehouse": "05 — Data Warehouse"
@@ -594,6 +590,18 @@ Object.assign(portfolioTranslations, {
   "Client clear message cũ của các case đổi cron, Run, Stop/Cancel khi khởi động, rồi lấy job info, cron và trạng thái HoldOn mới nhất qua Request/Response. Nếu đang HoldOn thì giữ trạng thái chờ; nếu không thì đăng ký cron. Admin cần sẵn sàng trước để trả lời.": "On startup, Clients clear old cron-change, Run, and Stop/Cancel messages, then retrieve current job information, cron, and HoldOn status through Request/Response. Held jobs remain waiting; otherwise cron is registered. Admin must be ready first to respond.",
   "6. Đăng ký cron nếu không HoldOn": "6. Register cron unless held",
   "Khởi tạo dự án, chọn công nghệ; trực tiếp thiết kế và triển khai RabbitMQ/EasyNetQ cho cấu hình, điều khiển job, heartbeat và hold/resume toàn hệ thống; dẫn dắt đội 5 người.": "Initiated the project and selected technologies. Designed and implemented RabbitMQ/EasyNetQ messaging for configuration, job control, heartbeats, and global hold/resume; led a team of 5."
+});
+// Confirmed tracing: Kafka -> Logstash Kafka input -> Elasticsearch; Kibana queries Elasticsearch.
+Object.assign(portfolioTranslations, {
+  "Các service publish trace event vào Kafka. Logstash dùng Kafka input để consume trực tiếp, xử lý log rồi gửi tới Elasticsearch để lưu và index. Kibana truy vấn Elasticsearch để tra cứu request, service và tham số khi debug.": "Services published trace events to Kafka. Logstash consumed them directly through its Kafka input, processed the logs, and sent them to Elasticsearch for storage and indexing. Kibana queried Elasticsearch to inspect requests, services, and parameters during debugging.",
+  "Trực tiếp tích hợp thêm game mới và migrate game cũ từ .NET Framework 4 sang .NET 8 với vai trò full-stack developer. Sử dụng luồng tracing có sẵn: service publish vào Kafka, Logstash consume và gửi log tới Elasticsearch; tra cứu trên Kibana để hỗ trợ coding và debugging.": "Integrated new games and migrated legacy game functionality from .NET Framework 4 to .NET 8 as a full-stack developer. Used the existing tracing pipeline: services published to Kafka, Logstash consumed and sent logs to Elasticsearch, and Kibana supported investigation during implementation and debugging.",
+  "Logstash trực tiếp consume Kafka bằng Kafka input, không có consumer service riêng trong luồng này. Pipeline được cấu hình trên máy/container chạy Logstash, độc lập với code ứng dụng .NET. Elasticsearch lưu và index log; Kibana gửi truy vấn tới Elasticsearch để tìm kiếm và hiển thị. Đối soát là luồng riêng, chạy theo lịch và múi giờ của từng Vendor, gửi cảnh báo Telegram khi có sai lệch để kiểm tra thủ công.": "Logstash consumed Kafka directly through its Kafka input, without a separate consumer service in this workflow. The pipeline configuration ran with Logstash on its host/container, independently of the .NET application code. Elasticsearch stored and indexed logs; Kibana queried Elasticsearch for search and display. Reconciliation remained a separate workflow, using Vendor-specific schedules and time zones, with Telegram alerts for manual investigation of mismatches.",
+  "Full-stack: tích hợp game mới và migrate game legacy từ .NET Framework 4 sang .NET 8; sử dụng tracing qua Kafka và tra cứu log trên Kibana để debug.": "Full-stack: integrated new games and migrated legacy game functionality from .NET Framework 4 to .NET 8; used Kafka-based tracing and inspected logs in Kibana for debugging.",
+  "Tracing request và cảnh báo đối soát": "Request tracing and reconciliation alerts",
+  "Service ứng dụng": "Application service",
+  "Lưu & index log": "Store & index logs",
+  "Tìm kiếm & hiển thị": "Search & display",
+  "Truy vấn / kết quả": "Query / results"
 });
 (() => {
   const textEntries = [];
