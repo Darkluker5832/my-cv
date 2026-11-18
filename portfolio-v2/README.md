@@ -8,7 +8,7 @@ Portfolio tĩnh bằng HTML/CSS/JavaScript, hỗ trợ VI/EN, bàn phím, mobile
 
 ## Bố cục case study
 
-Cả Mail Station, Data Warehouse và Customer Setting dùng cùng sáu phần:
+Cả Customer Setting, Game Aggregator, Mail Station và Data Warehouse dùng cùng sáu phần:
 
 1. Bối cảnh & khó khăn hiện tại
 2. Hệ thống cũ
@@ -33,6 +33,10 @@ Customer Setting giữ component và sequence diagram cũ/mới ở mức logic.
 
 ## In PDF
 
-Chọn CV tiếng Anh / PDF để tải bản CV ngắn một cột trong `output/pdf/Thinh-Truong-CV.pdf`. Chọn In portfolio / PDF để in toàn bộ case study theo thứ tự Customer Setting, Mail Station, Data Warehouse. Ctrl+P mặc định chỉ in hồ sơ. Bật background graphics khi in portfolio để giữ màu sơ đồ.
+Chọn CV tiếng Anh / PDF để tải bản CV ngắn một cột trong `output/pdf/Thinh-Truong-CV.pdf`. Chọn In portfolio / PDF để in toàn bộ case study theo thứ tự Customer Setting, Game Aggregator, Mail Station, Data Warehouse. Ctrl+P mặc định chỉ in hồ sơ. Bật background graphics khi in portfolio để giữ màu sơ đồ.
 
 Sau khi sửa nội dung HTML hoặc bản dịch, chạy `node scripts/export-translations.cjs` rồi `python scripts/build_cv_pdf.py` để cập nhật PDF. Script PDF cần reportlab và pymupdf; dùng Arial trên Windows hoặc DejaVu Sans khi có trên Linux. PDF tiếng Anh lấy dữ liệu từ cùng HTML và từ điển VI/EN; không thêm kinh nghiệm chưa xác nhận.
+
+## Game Aggregator
+
+Nền tảng có sẵn khi ứng viên tham gia; vai trò full-stack tập trung tích hợp game mới và migration .NET Framework 4 → .NET 8. Khoảng 20 Vendor/gần 1.000 game là quy mô chung, không phải đóng góp cá nhân. Tracing Kafka/Logstash/Kibana và đối soát/Telegram được mô tả như cơ chế nền tảng có sẵn. Sơ đồ ở mức logic; không tự thêm service topology, correlation ID, giao thức, log storage hay số lượng game đã migrate. Chưa có thời gian tham gia nên không tự điền ngày tháng.

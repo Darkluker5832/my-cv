@@ -87,19 +87,16 @@ for article in timeline.find('article'):
 story.append(PageBreak())
 add('SELECTED PROJECTS','section')
 projects=list(profile.find('article',**{'class':'project'}))
-for project in projects[:3]:
+featured_names={'Customer Setting','Game Aggregator','Mail Station','Data Warehouse'}
+featured=[project for project in projects if next(project.find('h3')).text() in featured_names]
+for project in featured:
     title=next(project.find('h3')).text()
     role=next(project.find('div',**{'class':'small muted'})).text()
     add(title,'job'); add(role,'small')
     for paragraph in project.find('p'): add(paragraph.text())
     tech=[n.text() for n in project.find('div',**{'class':'small'})]
     if tech: add(tech[-1],'small')
-add('ADDITIONAL PROJECTS','section')
-for project in projects[3:]:
-    add(next(project.find('h3')).text()+' | '+next(project.find('div',**{'class':'small muted'})).text(),'job')
-    # Summarize confirmed scope from the existing contribution paragraph.
-    paragraphs=list(project.find('p'))
-    add(paragraphs[-1].text())
+# The short CV prioritizes four case studies; additional project summaries remain on the website.
 add('EDUCATION & CERTIFICATIONS','section')
 sections=[n for n in profile.children if isinstance(n,Node) and n.tag=='section']
 education=next(n for n in sections if 'AWS Certified' in n.text())

@@ -492,6 +492,81 @@ Object.assign(portfolioTranslations, {
   "Làm rõ yêu cầu với PM/BA và review nội dung liên quan đến web trong đặc tả của BA; hướng dẫn junior/senior developers, review code và phụ trách triển khai production.": "Clarified requirements with PMs and BAs, reviewed web-related specifications, guided junior and senior developers, reviewed code, and handled production deployment.",
   "Khởi tạo dự án, chọn công nghệ; trực tiếp thiết kế và triển khai RabbitMQ/EasyNetQ cho lấy cấu hình, cập nhật cron, điều khiển job và heartbeat; dẫn dắt đội 5 người.": "Initiated the project and selected technologies. Designed and implemented RabbitMQ/EasyNetQ messaging for configuration retrieval, cron updates, job control, and heartbeats; led a team of 5."
 });
+// Game Aggregator: confirmed full-stack contribution and platform context.
+Object.assign(portfolioTranslations, {
+  "Game Aggregator — tổng quan hệ thống": "Game Aggregator — system overview",
+  "Browser / ứng dụng": "Browser / app",
+  "Công ty / Licensee": "Company / Licensee",
+  "Các service nội bộ": "Internal services",
+  "Xử lý game & kết quả": "Game logic & results",
+  "Dữ liệu kết quả game": "Game result records",
+  "Tracing & đối soát": "Tracing & reconciliation",
+  "Truy cập portal": "Access portal",
+  "Launch / kết quả": "Launch / results",
+  "Luồng launch game và trả kết quả": "Game launch and result delivery",
+  "1. Đăng ký / đăng nhập": "1. Register / log in",
+  "2. Gắn playerId với Licensee": "2. Associate playerId with Licensee",
+  "3. Yêu cầu launch game": "3. Request game launch",
+  "4. Chuyển yêu cầu tới Vendor": "4. Forward launch request",
+  "5. Gửi kết quả game": "5. Send game results",
+  "6. Ghi kết quả vào SQL DB": "6. Persist results in SQL DB",
+  "7. Chuyển kết quả cho Licensee": "7. Forward results to Licensee",
+  "Tracing request và cảnh báo đối soát": "Request tracing and reconciliation alerts",
+  "Request / event": "Request / event",
+  "Ghi log phục vụ debug": "Logs for debugging",
+  "Tra cứu luồng request": "Inspect request flow",
+  "Job đối soát định kỳ": "Scheduled reconciliation",
+  "Theo lịch từng Vendor": "Vendor-specific schedules",
+  "Phát hiện mismatch": "Detect mismatches",
+  "Cảnh báo để kiểm tra thủ công": "Alerts for manual investigation",
+  "Hai luồng độc lập: tracing request và đối soát dữ liệu": "Separate workflows: request tracing and data reconciliation",
+  "Một nền tảng tích hợp game.<br>Nhiều Vendor và Licensee.": "One game integration platform.<br>Multiple Vendors and Licensees.",
+  "Vai trò: Full-stack Developer": "Role: Full-stack Developer",
+  "Một nền tảng tích hợp game. Nhiều Vendor và Licensee.": "One game integration platform. Multiple Vendors and Licensees.",
+  "Công ty cấp phép game từ các Vendor, tổng hợp cùng game tự phát triển rồi cung cấp lại cho các Licensee/Partner. Danh mục gồm nhiều thể loại như strategy, board games, card games và shooting.": "The company licensed games from Vendors, combined them with internally developed games, and supplied them to Licensees/Partners. The catalog covered strategy, board games, card games, shooting, and other genres.",
+  "Mỗi Game Portal lựa chọn tập game riêng theo chiến lược, hiệu quả kinh doanh và campaign; không nhất thiết mở toàn bộ danh mục. Tích hợp nhiều Vendor và nhiều service nội bộ làm việc truy vết request, đối chiếu kết quả và billing trở nên quan trọng.": "Each Game Portal selected its own game offering based on strategy, performance, and campaigns rather than enabling the whole catalog. Integrating multiple Vendors and internal services made request tracing, result reconciliation, and billing verification important.",
+  "01 / Bối cảnh & khó khăn hiện tại": "01 / Context & current challenges",
+  "Tập trung nội dung game từ nhiều nhà cung cấp": "Centralize game content from multiple providers",
+  "Game Aggregator đã hoạt động trước khi tôi tham gia. Các game legacy sử dụng .NET Framework 4; nền tảng đã có các service phục vụ tích hợp game và kết nối với Vendor, Game Portal của công ty hoặc Licensee.": "Game Aggregator was already operating when I joined. Legacy games used .NET Framework 4; the platform already had services supporting game integrations and connections to Vendors and company- or Licensee-operated Game Portals.",
+  "Phạm vi công việc là mở rộng tích hợp và hiện đại hóa phần game cũ trong kiến trúc hiện hữu. Game Portal phía Licensee và hệ thống Vendor nằm ngoài phạm vi triển khai của tôi.": "The work focused on extending integrations and modernizing legacy game functionality within the existing architecture. Licensee Game Portals and Vendor systems were outside my implementation scope.",
+  "02 / Hệ thống cũ": "02 / Legacy system",
+  "Nền tảng có sẵn, bao gồm các tích hợp legacy": "An existing platform with legacy integrations",
+  "Bổ sung game mới bằng .NET 8 APIs và migrate các game cũ từ .NET Framework 4 sang .NET 8 theo yêu cầu của dự án.": "Added new games using .NET 8 APIs and migrated legacy game integrations from .NET Framework 4 to .NET 8 according to project requirements.",
+  "Tích hợp & migration": "Integration & migration",
+  "Hệ thống sử dụng Kafka để lưu event stream của request; consumer chuyển dữ liệu log qua Logstash, tra cứu trên Kibana để thấy các service và tham số liên quan khi debug.": "The platform used Kafka for request event streams; a consumer fed logs through Logstash for inspection in Kibana, helping trace involved services and parameters during debugging.",
+  "Tracing xuyên service": "Cross-service tracing",
+  "Các job định kỳ so sánh dữ liệu Vendor, Game Aggregator và Licensee theo lịch riêng của từng Vendor. Mismatch được cảnh báo vào Telegram room tương ứng để các bên kiểm tra thủ công.": "Scheduled jobs compared Vendor, Game Aggregator, and Licensee data using Vendor-specific schedules. Mismatches triggered alerts to the relevant Telegram rooms for manual investigation.",
+  "Đối soát theo Vendor": "Vendor-specific reconciliation",
+  "03 / Giải pháp cải tiến": "03 / Improvement approach",
+  "Tích hợp game mới, migrate từng phần và hỗ trợ vận hành": "Integrate new games, migrate incrementally, and support operations",
+  "Trực tiếp tích hợp thêm game mới và migrate game cũ từ .NET Framework 4 sang .NET 8 với vai trò full-stack developer. Làm việc trong hệ thống gồm nhiều service và sử dụng luồng tracing Kafka/Logstash/Kibana để theo dõi request, hỗ trợ coding và debugging.": "Integrated new games and migrated legacy game functionality from .NET Framework 4 to .NET 8 as a full-stack developer. Worked within a multi-service system and used Kafka/Logstash/Kibana request tracing to support implementation and debugging.",
+  "Kiến trúc và cơ chế tracing/đối soát là các thành phần có sẵn của nền tảng; đóng góp cá nhân tập trung vào các tích hợp và thay đổi được giao.": "The architecture and tracing/reconciliation mechanisms were existing platform capabilities; my individual contribution focused on assigned integrations and changes.",
+  "04 / Vai trò cá nhân": "04 / Individual contribution",
+  "Full-stack trong hệ thống có sẵn": "Full-stack development within the existing system",
+  "Sơ đồ ở mức logic: Game Portal và Vendor là các hệ thống bên ngoài ranh giới Game Aggregator. Không giả định cấu trúc hay số lượng service cụ thể bên trong nền tảng.": "This is a logical overview: Game Portals and Vendors sit outside the Game Aggregator boundary. It does not imply a particular internal service topology or count.",
+  "Launch game & chuyển kết quả": "Game launch & result delivery",
+  "Người chơi có thể là khách vãng lai hoặc thuộc một đại lý; đăng ký và đăng nhập qua Game Portal. Luồng đăng ký gắn playerId với Licensee để phục vụ report/billing. Portal gửi yêu cầu launch qua Game Aggregator tới Vendor; Vendor xử lý các event trong game và gửi kết quả về Aggregator. Aggregator lưu SQL DB rồi chuyển kết quả tới Licensee để họ đối chiếu hoặc lưu trong hệ thống riêng.": "Players could be walk-in users or belong to an agent, registering and logging in through a Game Portal. Registration associated a playerId with a Licensee for reporting and billing. The Portal sent launch requests through Game Aggregator to the Vendor. Vendors processed in-game events and returned results; Aggregator persisted results in SQL DB and forwarded them to Licensees for verification or storage in their own systems.",
+  "Sơ đồ thể hiện liên kết playerId–Licensee về mặt nghiệp vụ, không khẳng định service nào tạo tài khoản hoặc quản lý thông tin đăng nhập. Các mũi tên là trao đổi logic, không chỉ định giao thức hay kiểu message chưa được xác nhận.": "The diagram shows the business association between playerId and Licensee without assigning account creation or credential ownership to a specific service. Arrows represent logical exchanges, not an unconfirmed protocol or message type.",
+  "Tracing request & cảnh báo mismatch": "Request tracing & mismatch alerts",
+  "Kafka phục vụ lưu vết request đi qua các service nội bộ. Logstash và Kibana nằm trong luồng log để hỗ trợ điều tra; sơ đồ không mô tả đầy đủ tầng lưu trữ log. Các job đối soát là luồng riêng, chạy theo lịch và múi giờ của từng Vendor, gửi cảnh báo Telegram khi có sai lệch để kiểm tra thủ công.": "Kafka supported tracing requests across internal services. Logstash and Kibana formed part of the logging workflow; the diagram does not depict the full log-storage layer. Reconciliation was a separate workflow, scheduled around each Vendor’s timing and time zone, with Telegram alerts for manual investigation of mismatches.",
+  "05 / Hệ thống mới ra đời": "05 / New system",
+  "Từ Game Portal đến Vendor và đối soát kết quả": "From Game Portal to Vendor and result reconciliation",
+  "Quy mô tích hợp chung của nền tảng, kết hợp game bên ngoài và game do công ty phát triển.": "Overall platform integration scope, combining external content and company-developed games.",
+  "Khoảng 20 Vendor": "Around 20 Vendors",
+  "Danh mục nhiều thể loại; mỗi Licensee/Portal chọn tập game phù hợp với chiến lược của họ.": "A multi-genre catalog; each Licensee/Portal selected games suited to its strategy.",
+  "Gần 1.000 game": "Nearly 1,000 games",
+  "Đóng góp cá nhân: tích hợp game mới và migrate game legacy sang .NET 8 trong hệ thống có sẵn.": "Individual contribution: integrated new games and migrated legacy game functionality to .NET 8 within the existing system.",
+  "Tích hợp & hiện đại hóa": "Integration & modernization",
+  "Số Vendor và game phản ánh quy mô chung của dự án, không phải số lượng tích hợp do riêng tôi thực hiện.": "Vendor and game counts describe the overall project scope, not the number of integrations I personally delivered.",
+  "06 / Outcome": "06 / Outcome",
+  "Mở rộng tích hợp trên nền tảng khoảng 20 Vendor": "Extended integrations on a platform of around 20 Vendors",
+  "Nền tảng phân phối game giữa Vendor và Licensee, quy mô khoảng 20 Vendor và gần 1.000 game.": "A game distribution platform connecting Vendors and Licensees, with around 20 Vendors and nearly 1,000 games.",
+  "Đóng góp:": "Contributions:",
+  "Full-stack: tích hợp game mới và migrate game legacy từ .NET Framework 4 sang .NET 8; sử dụng Kafka/Logstash/Kibana để truy vết request và debug.": "Full-stack: integrated new games and migrated legacy game functionality from .NET Framework 4 to .NET 8; used Kafka/Logstash/Kibana to trace requests and debug.",
+  "03 — Game Aggregator": "03 — Game Aggregator",
+  "04 — Mail Station": "04 — Mail Station",
+  "05 — Data Warehouse": "05 — Data Warehouse"
+});
 (() => {
   const textEntries = [];
   const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
@@ -520,7 +595,7 @@ Object.assign(portfolioTranslations, {
     if (image) image.alt = english
       ? 'Angular to React and .NET Framework 4 to .NET 8 Minimal APIs modernization, integrating around 20 new products.' : originalAlt;
     description.content = english
-      ? 'Trương Huy Thịnh — .NET, distributed systems and enterprise architecture. Portfolio and Customer Setting, Mail Station, and Data Warehouse case studies.' : originalDescription;
+      ? 'Trương Huy Thịnh — .NET, distributed systems and enterprise architecture. Portfolio and Customer Setting, Game Aggregator, Mail Station, and Data Warehouse case studies.' : originalDescription;
     switcher.setAttribute('aria-label', english ? 'Language' : 'Ngôn ngữ');
     switcher.querySelectorAll('button').forEach(button => {
       button.setAttribute('aria-pressed', String(button.dataset.language === language));
