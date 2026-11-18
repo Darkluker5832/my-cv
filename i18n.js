@@ -522,6 +522,7 @@ Object.assign(portfolioTranslations, {
   "Hai luồng độc lập: tracing request và đối soát dữ liệu": "Separate workflows: request tracing and data reconciliation",
   "Một nền tảng tích hợp game.<br>Nhiều Vendor và Licensee.": "One game integration platform.<br>Multiple Vendors and Licensees.",
   "Vai trò: Full-stack Developer": "Role: Full-stack Developer",
+  "Vai trò: Full-stack Developer · 2024 — 01/2025": "Role: Full-stack Developer · 2024 — 01/2025",
   "Một nền tảng tích hợp game. Nhiều Vendor và Licensee.": "One game integration platform. Multiple Vendors and Licensees.",
   "Công ty cấp phép game từ các Vendor, tổng hợp cùng game tự phát triển rồi cung cấp lại cho các Licensee/Partner. Danh mục gồm nhiều thể loại như strategy, board games, card games và shooting.": "The company licensed games from Vendors, combined them with internally developed games, and supplied them to Licensees/Partners. The catalog covered strategy, board games, card games, shooting, and other genres.",
   "Mỗi Game Portal lựa chọn tập game riêng theo chiến lược, hiệu quả kinh doanh và campaign; không nhất thiết mở toàn bộ danh mục. Tích hợp nhiều Vendor và nhiều service nội bộ làm việc truy vết request, đối chiếu kết quả và billing trở nên quan trọng.": "Each Game Portal selected its own game offering based on strategy, performance, and campaigns rather than enabling the whole catalog. Integrating multiple Vendors and internal services made request tracing, result reconciliation, and billing verification important.",
