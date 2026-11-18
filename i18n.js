@@ -568,6 +568,33 @@ Object.assign(portfolioTranslations, {
   "04 — Mail Station": "04 — Mail Station",
   "05 — Data Warehouse": "05 — Data Warehouse"
 });
+// Confirmed persisted global hold and startup-based resume.
+Object.assign(portfolioTranslations, {
+  "Tạm dừng toàn hệ thống khi DB high load": "Global hold during high database load",
+  "1. Lưu trạng thái các job = HoldOn": "1. Persist job status = HoldOn",
+  "2. Publish topic TemporaryHoldOn": "2. Publish topic TemporaryHoldOn",
+  "3. Các Client nhận thông báo hold": "3. Clients receive hold notification",
+  "4. Yêu cầu hủy job đang chạy": "4. Request cancellation of running jobs",
+  "5. Dừng cron; chuyển sang chờ": "5. Stop cron; enter waiting state",
+  "Khi DB chịu tải cao và team Database đang xử lý, Admin lưu trạng thái HoldOn của các job vào SQL DB rồi publish thông báo TemporaryHoldOn. Các Client nhận thông báo, yêu cầu hủy job đang chạy qua cancellationToken, dừng cron và chuyển sang trạng thái chờ.": "When the database is under high load and the Database team is investigating, Admin persists HoldOn job status in SQL DB and publishes TemporaryHoldOn. Clients receive the notification, request cancellation of running jobs through cancellationToken, stop cron, and enter a waiting state.",
+  "Trạng thái HoldOn được trả kèm job info khi Client khởi động. Vì vậy, Client restart trong thời gian hold vẫn nhận được trạng thái hiện tại từ Admin thay vì chỉ phụ thuộc vào thông báo Pub/Sub trước đó.": "HoldOn status is included in the job information returned at Client startup. A Client restarting during the hold therefore retrieves the current state from Admin rather than depending solely on an earlier Pub/Sub notification.",
+  "Chỉ Admin cập nhật trạng thái HoldOn. Trong trạng thái này, các chức năng Run ngay và Stop bị disabled; Client không đăng ký cron để chạy job mới.": "Only Admin updates HoldOn status. While held, Run now and Stop controls are disabled; Clients do not register cron to start new jobs.",
+  "Phục hồi bằng luồng khởi động dùng chung": "Resume through the shared startup flow",
+  "1. DBA xác nhận ready: lưu Normal": "1. DBA confirms ready: persist Normal",
+  "2. Publish topic ContinueWorking": "2. Publish topic ContinueWorking",
+  "3. Các Client nhận thông báo tiếp tục": "3. Clients receive resume notification",
+  "4. Chạy lại startup; clear message cũ": "4. Rerun startup; clear old messages",
+  "5. Request job info và trạng thái": "5. Request job information and status",
+  "6. Response cấu hình/trạng thái mới nhất": "6. Return current configuration and status",
+  "7. Đăng ký cron theo cấu hình": "7. Register cron from configuration",
+  "Sau khi DBA xác nhận DB đã sẵn sàng, Admin cập nhật trạng thái các job trong DB về Normal trước, rồi publish ContinueWorking. Client dùng lại luồng khởi động: clear message cũ, Request/Response để lấy job info và trạng thái mới nhất, rồi đăng ký lại cron theo cấu hình.": "After the DBA confirms database readiness, Admin first updates job status in the database to Normal, then publishes ContinueWorking. Clients reuse the startup flow: clear old messages, fetch current job information and status through Request/Response, and register cron again from configuration.",
+  "Đây là tạm dừng/phục hồi do người vận hành điều khiển. Hủy job là cơ chế hợp tác; phục hồi cron không có nghĩa tiếp tục job từ bước đang dở hoặc tự chạy bù các lịch đã bỏ qua.": "This is an operator-controlled hold/resume mechanism. Job cancellation is cooperative; restoring cron does not imply resuming a job from its interrupted step or automatically replaying missed schedules.",
+  "Hold toàn hệ thống": "Global hold",
+  "Phục hồi sau Hold": "Resume after hold",
+  "Client clear message cũ của các case đổi cron, Run, Stop/Cancel khi khởi động, rồi lấy job info, cron và trạng thái HoldOn mới nhất qua Request/Response. Nếu đang HoldOn thì giữ trạng thái chờ; nếu không thì đăng ký cron. Admin cần sẵn sàng trước để trả lời.": "On startup, Clients clear old cron-change, Run, and Stop/Cancel messages, then retrieve current job information, cron, and HoldOn status through Request/Response. Held jobs remain waiting; otherwise cron is registered. Admin must be ready first to respond.",
+  "6. Đăng ký cron nếu không HoldOn": "6. Register cron unless held",
+  "Khởi tạo dự án, chọn công nghệ; trực tiếp thiết kế và triển khai RabbitMQ/EasyNetQ cho cấu hình, điều khiển job, heartbeat và hold/resume toàn hệ thống; dẫn dắt đội 5 người.": "Initiated the project and selected technologies. Designed and implemented RabbitMQ/EasyNetQ messaging for configuration, job control, heartbeats, and global hold/resume; led a team of 5."
+});
 (() => {
   const textEntries = [];
   const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {

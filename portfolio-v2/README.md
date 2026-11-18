@@ -40,3 +40,7 @@ Sau khi sửa nội dung HTML hoặc bản dịch, chạy `node scripts/export-t
 ## Game Aggregator
 
 Nền tảng có sẵn khi ứng viên tham gia; vai trò full-stack tập trung tích hợp game mới và migration .NET Framework 4 → .NET 8. Khoảng 20 Vendor/gần 1.000 game là quy mô chung, không phải đóng góp cá nhân. Tracing Kafka/Logstash/Kibana và đối soát/Telegram được mô tả như cơ chế nền tảng có sẵn. Sơ đồ ở mức logic; không tự thêm service topology, correlation ID, giao thức, log storage hay số lượng game đã migrate. Chưa có thời gian tham gia nên không tự điền ngày tháng.
+
+## Mail Station: Hold / Continue
+
+Admin lưu HoldOn trong DB trước khi publish topic TemporaryHoldOn. Client yêu cầu hủy job, dừng cron và giữ trạng thái chờ; Run ngay/Stop trên Admin bị disabled. Client khởi động trong thời gian hold nhận trạng thái này qua job info. Khi DBA xác nhận ready, Admin lưu Normal trước rồi publish ContinueWorking. Client dùng lại startup flow để clear message cũ, lấy job info/trạng thái qua Request/Response và đăng ký lại cron. Đây là cơ chế vận hành do Admin điều khiển, không tự phát hiện DB ready hoặc tiếp tục job từ bước đang dở. Các mũi tên Request/Response trong sơ đồ phục hồi là biểu diễn rút gọn trao đổi qua RabbitMQ.
