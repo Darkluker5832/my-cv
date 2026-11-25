@@ -505,8 +505,6 @@ Object.assign(portfolioTranslations, {
   "Launch / kết quả": "Launch / results",
   "1. Đăng ký / đăng nhập": "1. Register / log in",
   "2. Gắn playerId với Licensee": "2. Associate playerId with Licensee",
-  "3. Yêu cầu launch game": "3. Request game launch",
-  "4. Chuyển yêu cầu tới Vendor": "4. Forward launch request",
   "Tracing request và cảnh báo đối soát": "Request tracing and reconciliation alerts",
   "Request / event": "Request / event",
   "Ghi log phục vụ debug": "Logs for debugging",
@@ -602,12 +600,17 @@ Object.assign(portfolioTranslations, {
 });
 // Consistent Game Events terminology in the launch/delivery sequence.
 Object.assign(portfolioTranslations, {
-  "Launch game & chuyển Game Events": "Game launch & event delivery",
-  "Luồng launch game và chuyển Game Events": "Game launch and event delivery",
   "5. Gửi Game Events": "5. Send Game Events",
   "6. Ghi Game Events vào SQL DB": "6. Persist Game Events in SQL DB",
   "7. Chuyển Game Events cho Licensee": "7. Forward Game Events to Licensee",
-  "Người chơi có thể là khách vãng lai hoặc thuộc một đại lý; đăng ký và đăng nhập qua Game Portal. Luồng đăng ký gắn playerId với Licensee để phục vụ report/billing. Portal gửi yêu cầu launch qua Game Aggregator tới Vendor. Vendor xử lý game và gửi Game Events về Aggregator, gồm Launch, Win/Lose/Draw, Cancel/Void, Bonus, Reward, Buy Tickets, Buy In-Game Items và các event khác. Aggregator ghi nhận event trong SQL DB rồi chuyển tới Licensee để họ đối chiếu hoặc lưu trong hệ thống riêng.": "Players could be walk-in users or belong to an agent, registering and logging in through a Game Portal. Registration associated a playerId with a Licensee for reporting and billing. The Portal sent launch requests through Game Aggregator to the Vendor. Vendors ran the games and sent Game Events back to Aggregator, including Launch, Win/Lose/Draw, Cancel/Void, Bonus, Reward, Buy Tickets, Buy In-Game Items, and other events. Aggregator recorded events in SQL DB and forwarded them to Licensees for verification or storage in their own systems."
+});
+// Launch is one Game Event rather than a separate workflow.
+Object.assign(portfolioTranslations, {
+  "Xử lý & chuyển Game Events": "Game Events processing & delivery",
+  "Luồng xử lý và chuyển Game Events": "Game Events processing and delivery flow",
+  "3. Gửi yêu cầu Game Event": "3. Send Game Event request",
+  "4. Chuyển yêu cầu tới Vendor": "4. Forward request to Vendor",
+  "Người chơi có thể là khách vãng lai hoặc thuộc một đại lý; đăng ký và đăng nhập qua Game Portal. Luồng đăng ký gắn playerId với Licensee để phục vụ report/billing. Các yêu cầu Game Event từ Portal được chuyển qua Game Aggregator tới Vendor. Vendor xử lý game và gửi Game Events về Aggregator, gồm Launch, Win/Lose/Draw, Cancel/Void, Bonus, Reward, Buy Tickets, Buy In-Game Items và các event khác. Aggregator ghi nhận event trong SQL DB rồi chuyển tới Licensee để họ đối chiếu hoặc lưu trong hệ thống riêng.": "Players could be walk-in users or belong to an agent, registering and logging in through a Game Portal. Registration associated a playerId with a Licensee for reporting and billing. Game Event requests from the Portal passed through Game Aggregator to the Vendor. Vendors ran the games and sent Game Events back to Aggregator, including Launch, Win/Lose/Draw, Cancel/Void, Bonus, Reward, Buy Tickets, Buy In-Game Items, and other events. Aggregator recorded events in SQL DB and forwarded them to Licensees for verification or storage in their own systems."
 });
 (() => {
   const textEntries = [];
