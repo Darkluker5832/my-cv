@@ -612,6 +612,10 @@ Object.assign(portfolioTranslations, {
   "4. Chuyển yêu cầu tới Vendor": "4. Forward request to Vendor",
   "Người chơi có thể là khách vãng lai hoặc thuộc một đại lý; đăng ký và đăng nhập qua Game Portal. Luồng đăng ký gắn playerId với Licensee để phục vụ report/billing. Các yêu cầu Game Event từ Portal được chuyển qua Game Aggregator tới Vendor. Vendor xử lý game và gửi Game Events về Aggregator, gồm Launch, Win/Lose/Draw, Cancel/Void, Bonus, Reward, Buy Tickets, Buy In-Game Items và các event khác. Aggregator ghi nhận event trong SQL DB rồi chuyển tới Licensee để họ đối chiếu hoặc lưu trong hệ thống riêng.": "Players could be walk-in users or belong to an agent, registering and logging in through a Game Portal. Registration associated a playerId with a Licensee for reporting and billing. Game Event requests from the Portal passed through Game Aggregator to the Vendor. Vendors ran the games and sent Game Events back to Aggregator, including Launch, Win/Lose/Draw, Cancel/Void, Bonus, Reward, Buy Tickets, Buy In-Game Items, and other events. Aggregator recorded events in SQL DB and forwarded them to Licensees for verification or storage in their own systems."
 });
+// Explicit Kafka producer/consumer roles in request tracing.
+Object.assign(portfolioTranslations, {
+  "Phát event tracing của request": "Publish request-tracing events"
+});
 (() => {
   const textEntries = [];
   const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
