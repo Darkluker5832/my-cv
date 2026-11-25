@@ -1,9 +1,8 @@
-"""Build a concise English CV from the published profile and its translations."""
+"""Build a concise English CV directly from the published English profile."""
 from pathlib import Path
 from html.parser import HTMLParser
 from xml.sax.saxutils import escape
 import re
-import json
 from reportlab.platypus import SimpleDocTemplate, Paragraph, PageBreak
 from reportlab.lib.styles import ParagraphStyle
 from reportlab.lib.colors import HexColor
@@ -12,7 +11,6 @@ from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
 
 ROOT = Path(__file__).resolve().parents[1]
-TRANSLATIONS = json.loads((ROOT/'tmp/pdfs/translations.json').read_text(encoding='utf-8'))
 class Node:
     def __init__(self, tag, attrs=()):
         self.tag, self.attrs, self.children = tag, dict(attrs), []
@@ -29,7 +27,7 @@ class Node:
                 parts.append(child.text())
             else:
                 value=child.strip()
-                if value: parts.append(TRANSLATIONS.get(value,value))
+                if value: parts.append(value)
         return re.sub(r'\s+',' ',' '.join(parts)).strip()
 class Parser(HTMLParser):
     def __init__(self):

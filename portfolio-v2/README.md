@@ -1,48 +1,56 @@
-# Trương Huy Thịnh — Engineering Portfolio
+# Trương Huy Thịnh - Engineering Portfolio
 
-Portfolio tĩnh bằng HTML/CSS/JavaScript, hỗ trợ VI/EN, bàn phím, mobile và in PDF. Mở `index.html` để xem. Không cần build hoặc thư viện ngoài.
+English-only static portfolio built with HTML, CSS, JavaScript, and inline SVG. Open `index.html` directly; no build step or external website libraries are required.
 
-## Cấu trúc và triển khai
+## Published copies
 
-`../index.html` và `../i18n.js` ở root là bản phục vụ GitHub Pages. `portfolio-v2/` giữ bản tương ứng; cập nhật hai bản cùng nhau. GitHub Actions trong `.github/workflows/deploy.yml` triển khai root khi push lên `main`.
+Root `index.html` serves GitHub Pages and the Nginx container. `portfolio-v2/index.html` is a matching copy; its CV download link uses a relative path to the shared PDF. Keep both copies synchronized. GitHub Actions deploys root on pushes to `main`.
 
-## Bố cục case study
+There is no language switch, translation dictionary, or language preference stored in localStorage. Edit English content directly in HTML, including diagram text and accessibility labels. Preserve the candidate's name and confirmed facts.
 
-Cả Customer Setting, Game Aggregator, Mail Station và Data Warehouse dùng cùng sáu phần:
+## Case-study structure
 
-1. Bối cảnh & khó khăn hiện tại
-2. Hệ thống cũ
-3. Giải pháp cải tiến
-4. Vai trò cá nhân
-5. Hệ thống mới ra đời
+Customer Setting, Game Aggregator, Mail Station, and Data Warehouse use six sections:
+
+1. Context & current challenges
+2. Legacy system
+3. Improvement approach
+4. Individual contribution
+5. New system
 6. Outcome
 
-Phần giải pháp giải thích hướng thay đổi; phần hệ thống mới trình bày thành phần và luồng thực tế sau triển khai. Giữ rõ đóng góp cá nhân và kết quả phối hợp toàn dự án. Số đo hiệu năng là xấp xỉ theo thông tin người dùng xác nhận.
-
-## Mail Station
-
-Client khởi động: clear message cũ của cron/Run/Stop/Cancel, rồi lấy job info và cron mới nhất qua Request/Response. Admin phải sẵn sàng trước để phản hồi. Pub/Sub dùng cho đổi cron, Run, Stop/Cancel và heartbeat. JobTask kiểm tra `cancellationToken` và truyền vào async method hỗ trợ hủy. Client publish heartbeat mỗi phút; Admin lưu thời điểm nhận theo Job ID. Job List hiển thị Not Available khi heartbeat quá 5 phút. Không đồng nhất trạng thái này với xác nhận process đã chết.
-
-Các sequence diagram mô tả luồng logic, không phải đặc tả message contract. Không suy diễn TTL, replay, queue durability hoặc cơ chế tự phục hồi chưa được xác nhận. Luồng báo kết quả không gán pattern cụ thể.
-
-## Ngôn ngữ và chỉnh sửa
-
-Nội dung, SVG và logic tab nằm trong `index.html`; bản dịch trong `i18n.js`. Khi thêm nội dung, thêm nguyên văn text node tiếng Việt làm khóa trong `portfolioTranslations`. Nút VI/EN giữ nguyên tab và luồng đang xem; lựa chọn ngôn ngữ được lưu trong localStorage nếu có thể. Mặc định khi chưa lưu lựa chọn là tiếng Anh.
-
-Customer Setting giữ component và sequence diagram cũ/mới ở mức logic. Các ID là ví dụ; không suy ra schema hoặc topology vật lý. Data Warehouse thể hiện ranh giới web/service và phần database do team DB phụ trách.
-
-## In PDF
-
-Chọn CV tiếng Anh / PDF để tải bản CV ngắn một cột trong `output/pdf/Thinh-Truong-CV.pdf`. Chọn In portfolio / PDF để in toàn bộ case study theo thứ tự Customer Setting, Game Aggregator, Mail Station, Data Warehouse. Ctrl+P mặc định chỉ in hồ sơ. Bật background graphics khi in portfolio để giữ màu sơ đồ.
-
-Sau khi sửa nội dung HTML hoặc bản dịch, chạy `node scripts/export-translations.cjs` rồi `python scripts/build_cv_pdf.py` để cập nhật PDF. Script PDF cần reportlab và pymupdf; dùng Arial trên Windows hoặc DejaVu Sans khi có trên Linux. PDF tiếng Anh lấy dữ liệu từ cùng HTML và từ điển VI/EN; không thêm kinh nghiệm chưa xác nhận.
+Separate individual implementation from team results and existing platform capabilities. Keep approximate metrics qualified. Do not add unconfirmed protocols, service topologies, infrastructure ownership, or performance guarantees.
 
 ## Game Aggregator
 
-Nền tảng có sẵn khi ứng viên tham gia; vai trò full-stack tập trung tích hợp game từ Vendor, tiếp nhận game event và migration các chức năng Game Aggregator từ .NET Framework 4 → .NET 8. Game từ Vendor dùng engine/ngôn ngữ riêng (ví dụ Cocos, Unity); mã nguồn game không thuộc phạm vi migration. Khoảng 20 Vendor/gần 1.000 game là quy mô chung, không phải đóng góp cá nhân. Tracing Kafka/Logstash/Kibana và đối soát/Telegram được mô tả như cơ chế nền tảng có sẵn. Sơ đồ ở mức logic; không tự thêm service topology, correlation ID, giao thức hay số lượng game đã migrate. Chưa có thời gian tham gia nên không tự điền ngày tháng.
+Participation: 2024 to January 2025. Full-stack work focused on Vendor integrations, game-event ingestion, and migration of legacy Game Aggregator functionality from .NET Framework 4 to .NET 8. Vendor game code and engines such as Cocos/Unity were outside the migration scope. Around 20 Vendors and nearly 1,000 games describe platform scope, not individual delivery counts.
 
-## Mail Station: Hold / Continue
+Licensees can use the company's paid default Game Portal or build their own. Launch requests pass through Licensee Portal -> Game Aggregator -> Vendor. After launch, Players interact directly with Vendor games. Vendors process events and send results to Aggregator, which records them in SQL DB and forwards them to Licensees for recording/reconciliation. The architecture overview and separate launch/gameplay sequences reflect these different routes.
 
-Admin lưu HoldOn trong DB trước khi publish topic TemporaryHoldOn. Client yêu cầu hủy job, dừng cron và giữ trạng thái chờ; Run ngay/Stop trên Admin bị disabled. Client khởi động trong thời gian hold nhận trạng thái này qua job info. Khi DBA xác nhận ready, Admin lưu Normal trước rồi publish ContinueWorking. Client dùng lại startup flow để clear message cũ, lấy job info/trạng thái qua Request/Response và đăng ký lại cron. Đây là cơ chế vận hành do Admin điều khiển, không tự phát hiện DB ready hoặc tiếp tục job từ bước đang dở. Các mũi tên Request/Response trong sơ đồ phục hồi là biểu diễn rút gọn trao đổi qua RabbitMQ.
+Existing tracing pipeline: application services produce to Kafka -> Logstash Kafka input consumes directly -> Elasticsearch stores/indexes logs; Kibana queries Elasticsearch. No separate consumer service is depicted. Logstash pipeline configuration is separate from .NET application code. Vendor-specific reconciliation jobs send Telegram alerts for manual investigation.
 
-Luồng log đã xác nhận: service publish Kafka → Logstash Kafka input consume trực tiếp → Elasticsearch lưu/index log; Kibana truy vấn Elasticsearch. Không có consumer service riêng trong luồng này. Cấu hình pipeline nằm phía Logstash, không phải code .NET. Không gán việc xây dựng/vận hành Elastic Stack cho ứng viên.
+## Mail Station
+
+Clients fetch current job information, cron, and HoldOn status through Request/Response at startup; Admin must be ready first. Pub/Sub carries cron changes, Run/Stop/Cancel, heartbeats, TemporaryHoldOn, and ContinueWorking. Clients check cancellationToken at defined steps and pass it to cancellation-aware asynchronous calls.
+
+Admin persists HoldOn before publishing TemporaryHoldOn. Clients request cancellation, stop cron, and wait; Run/Stop controls are disabled while held. Admin persists Normal before publishing ContinueWorking after DBA confirmation. Clients reuse startup to clear old messages, fetch current configuration/state, and restore cron. This is operator-controlled recovery, not automatic readiness detection or checkpoint-based job continuation.
+
+Heartbeat arrives every minute. Admin records the latest arrival by Job ID; Job List shows Not Available after more than five minutes without heartbeat. This is an availability signal, not proof a process has died.
+
+## Customer Setting and Data Warehouse
+
+Customer Setting separates configuration-driven integration improvements through early 2024 from technology/infrastructure modernization from 2024. The latter retired two Windows Server machines after moving to on-premises Linux. Logical diagrams do not imply physical database schemas or Kubernetes topology.
+
+Data Warehouse separates the web process from queued export services. Application/export/monitoring implementation belongs to the candidate; database splitting and stored-procedure tuning belong to the Database team. Performance and memory figures reflect approximate reported operation.
+
+## CV and portfolio export
+
+The English CV download points to `output/pdf/Thinh-Truong-CV.pdf`. It is a two-page, single-column resume focusing on four case studies. Additional project summaries remain on the website. The portfolio print button includes all case studies in navigation order and all Mail Station workflows. Ctrl+P defaults to the profile only.
+
+After changing profile content, regenerate the PDF from repository root:
+
+```powershell
+python scripts/build_cv_pdf.py
+```
+
+The generator reads English HTML directly and requires `reportlab`. It uses Arial on Windows or DejaVu Sans on Linux. For visual QA and text extraction, use PyMuPDF or Poppler. Render and inspect the final PDF; verify contact details, dates, project scope, and reading order. Temporary QA output belongs under ignored `tmp/`.
