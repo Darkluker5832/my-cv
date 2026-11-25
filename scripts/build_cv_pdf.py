@@ -62,7 +62,7 @@ def para(value,style='body'):
 story=[]
 def add(value,style='body'): story.append(para(value,style))
 name=next(profile.find('h1')).text().split('.')[0]
-add(name,'name'); add('Staff Software Engineer | .NET Backend & Technical Leadership','title')
+add(name,'name'); add('Staff Software Engineer | Tech Lead | .NET Backend','title')
 add('Ho Chi Minh City, Vietnam | tht5832@gmail.com | +84 933 772 668','small')
 portfolio=next(a.attrs['href'] for a in profile.find('a') if a.attrs.get('href','').startswith('https://darkluker5832.github.io/'))
 story.append(Paragraph('Portfolio: <link href="'+escape(portfolio)+'" color="#17644e"><u>'+escape(portfolio)+'</u></link>',styles['small']))
