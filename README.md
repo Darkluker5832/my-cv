@@ -23,7 +23,7 @@ Separate individual implementation from team results and existing platform capab
 
 ## Game Aggregator
 
-Participation: 2024 to January 2025. Full-stack work focused on Vendor integrations, game-event ingestion, and migration of legacy Game Aggregator functionality from .NET Framework 4 to .NET 8. Vendor game code and engines such as Cocos/Unity were outside the migration scope. Around 20 Vendors and nearly 1,000 games describe platform scope, not individual delivery counts.
+Participation: 2024 to January 2025. Full-stack work focused on Vendor integrations, game-event ingestion, and migration of legacy Game Aggregator functionality from .NET Framework 4 to .NET 8. Vendor game code and engines such as Cocos/Unity were outside the migration scope. Around 20 Vendors and nearly 1,000 games describe platform scope in the overview. Individual outcomes: integrated 2 new Vendors with around 50 games, and migrated integrations for 2 existing Vendors from .NET Framework 4 to .NET 8. Vendor integrations are the primary delivery unit; the candidate did not develop the games.
 
 Licensees can use the company's paid default Game Portal or build their own. Launch requests pass through Licensee Portal -> Game Aggregator -> Vendor. After launch, Players interact directly with Vendor games. Vendors process events and send results to Aggregator, which records them in SQL DB and forwards them to Licensees for recording/reconciliation. The architecture overview and separate launch/gameplay sequences reflect these different routes.
 
