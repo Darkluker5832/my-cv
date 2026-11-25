@@ -528,17 +528,13 @@ Object.assign(portfolioTranslations, {
   "Mỗi Game Portal lựa chọn tập game riêng theo chiến lược, hiệu quả kinh doanh và campaign; không nhất thiết mở toàn bộ danh mục. Tích hợp nhiều Vendor và nhiều service nội bộ làm việc truy vết request, đối chiếu kết quả và billing trở nên quan trọng.": "Each Game Portal selected its own game offering based on strategy, performance, and campaigns rather than enabling the whole catalog. Integrating multiple Vendors and internal services made request tracing, result reconciliation, and billing verification important.",
   "01 / Bối cảnh & khó khăn hiện tại": "01 / Context & current challenges",
   "Tập trung nội dung game từ nhiều nhà cung cấp": "Centralize game content from multiple providers",
-  "Game Aggregator đã hoạt động trước khi tôi tham gia. Các game legacy sử dụng .NET Framework 4; nền tảng đã có các service phục vụ tích hợp game và kết nối với Vendor, Game Portal của công ty hoặc Licensee.": "Game Aggregator was already operating when I joined. Legacy games used .NET Framework 4; the platform already had services supporting game integrations and connections to Vendors and company- or Licensee-operated Game Portals.",
-  "Phạm vi công việc là mở rộng tích hợp và hiện đại hóa phần game cũ trong kiến trúc hiện hữu. Game Portal phía Licensee và hệ thống Vendor nằm ngoài phạm vi triển khai của tôi.": "The work focused on extending integrations and modernizing legacy game functionality within the existing architecture. Licensee Game Portals and Vendor systems were outside my implementation scope.",
   "02 / Hệ thống cũ": "02 / Legacy system",
   "Nền tảng có sẵn, bao gồm các tích hợp legacy": "An existing platform with legacy integrations",
-  "Bổ sung game mới bằng .NET 8 APIs và migrate các game cũ từ .NET Framework 4 sang .NET 8 theo yêu cầu của dự án.": "Added new games using .NET 8 APIs and migrated legacy game integrations from .NET Framework 4 to .NET 8 according to project requirements.",
   "Tích hợp & migration": "Integration & migration",
   "Tracing xuyên service": "Cross-service tracing",
   "Các job định kỳ so sánh dữ liệu Vendor, Game Aggregator và Licensee theo lịch riêng của từng Vendor. Mismatch được cảnh báo vào Telegram room tương ứng để các bên kiểm tra thủ công.": "Scheduled jobs compared Vendor, Game Aggregator, and Licensee data using Vendor-specific schedules. Mismatches triggered alerts to the relevant Telegram rooms for manual investigation.",
   "Đối soát theo Vendor": "Vendor-specific reconciliation",
   "03 / Giải pháp cải tiến": "03 / Improvement approach",
-  "Tích hợp game mới, migrate từng phần và hỗ trợ vận hành": "Integrate new games, migrate incrementally, and support operations",
   "Kiến trúc và cơ chế tracing/đối soát là các thành phần có sẵn của nền tảng; đóng góp cá nhân tập trung vào các tích hợp và thay đổi được giao.": "The architecture and tracing/reconciliation mechanisms were existing platform capabilities; my individual contribution focused on assigned integrations and changes.",
   "04 / Vai trò cá nhân": "04 / Individual contribution",
   "Full-stack trong hệ thống có sẵn": "Full-stack development within the existing system",
@@ -553,7 +549,6 @@ Object.assign(portfolioTranslations, {
   "Khoảng 20 Vendor": "Around 20 Vendors",
   "Danh mục nhiều thể loại; mỗi Licensee/Portal chọn tập game phù hợp với chiến lược của họ.": "A multi-genre catalog; each Licensee/Portal selected games suited to its strategy.",
   "Gần 1.000 game": "Nearly 1,000 games",
-  "Đóng góp cá nhân: tích hợp game mới và migrate game legacy sang .NET 8 trong hệ thống có sẵn.": "Individual contribution: integrated new games and migrated legacy game functionality to .NET 8 within the existing system.",
   "Tích hợp & hiện đại hóa": "Integration & modernization",
   "Số Vendor và game phản ánh quy mô chung của dự án, không phải số lượng tích hợp do riêng tôi thực hiện.": "Vendor and game counts describe the overall project scope, not the number of integrations I personally delivered.",
   "06 / Outcome": "06 / Outcome",
@@ -594,14 +589,22 @@ Object.assign(portfolioTranslations, {
 // Confirmed tracing: Kafka -> Logstash Kafka input -> Elasticsearch; Kibana queries Elasticsearch.
 Object.assign(portfolioTranslations, {
   "Các service publish trace event vào Kafka. Logstash dùng Kafka input để consume trực tiếp, xử lý log rồi gửi tới Elasticsearch để lưu và index. Kibana truy vấn Elasticsearch để tra cứu request, service và tham số khi debug.": "Services published trace events to Kafka. Logstash consumed them directly through its Kafka input, processed the logs, and sent them to Elasticsearch for storage and indexing. Kibana queried Elasticsearch to inspect requests, services, and parameters during debugging.",
-  "Trực tiếp tích hợp thêm game mới và migrate game cũ từ .NET Framework 4 sang .NET 8 với vai trò full-stack developer. Sử dụng luồng tracing có sẵn: service publish vào Kafka, Logstash consume và gửi log tới Elasticsearch; tra cứu trên Kibana để hỗ trợ coding và debugging.": "Integrated new games and migrated legacy game functionality from .NET Framework 4 to .NET 8 as a full-stack developer. Used the existing tracing pipeline: services published to Kafka, Logstash consumed and sent logs to Elasticsearch, and Kibana supported investigation during implementation and debugging.",
   "Logstash trực tiếp consume Kafka bằng Kafka input, không có consumer service riêng trong luồng này. Pipeline được cấu hình trên máy/container chạy Logstash, độc lập với code ứng dụng .NET. Elasticsearch lưu và index log; Kibana gửi truy vấn tới Elasticsearch để tìm kiếm và hiển thị. Đối soát là luồng riêng, chạy theo lịch và múi giờ của từng Vendor, gửi cảnh báo Telegram khi có sai lệch để kiểm tra thủ công.": "Logstash consumed Kafka directly through its Kafka input, without a separate consumer service in this workflow. The pipeline configuration ran with Logstash on its host/container, independently of the .NET application code. Elasticsearch stored and indexed logs; Kibana queried Elasticsearch for search and display. Reconciliation remained a separate workflow, using Vendor-specific schedules and time zones, with Telegram alerts for manual investigation of mismatches.",
-  "Full-stack: tích hợp game mới và migrate game legacy từ .NET Framework 4 sang .NET 8; sử dụng tracing qua Kafka và tra cứu log trên Kibana để debug.": "Full-stack: integrated new games and migrated legacy game functionality from .NET Framework 4 to .NET 8; used Kafka-based tracing and inspected logs in Kibana for debugging.",
   "Tracing request và cảnh báo đối soát": "Request tracing and reconciliation alerts",
   "Service ứng dụng": "Application service",
   "Lưu & index log": "Store & index logs",
   "Tìm kiếm & hiển thị": "Search & display",
   "Truy vấn / kết quả": "Query / results"
+});
+// Migration applies to Game Aggregator, not Vendor game code or engines.
+Object.assign(portfolioTranslations, {
+  "Game Aggregator đã hoạt động trước khi tôi tham gia và được phát triển bằng .NET Framework 4. Đây là hệ thống legacy cần migrate sang .NET 8. Game từ các Vendor được phát triển bằng công nghệ riêng như Cocos, Unity và các ngôn ngữ/engine khác; Game Aggregator tích hợp với Vendor và tiếp nhận các game event, không phải phần mã nguồn game của họ.": "Game Aggregator was already operating when I joined and had been developed using .NET Framework 4. This legacy platform needed migration to .NET 8. Vendor games used their own technologies, such as Cocos, Unity, and other languages/engines. Game Aggregator integrated with Vendors and received game events; the Vendor game code was outside that migration scope.",
+  "Phạm vi công việc là mở rộng tích hợp và hiện đại hóa các chức năng của Game Aggregator trong kiến trúc hiện hữu. Mã nguồn game, Game Portal phía Licensee và hệ thống Vendor nằm ngoài phạm vi triển khai của tôi.": "The work focused on extending integrations and modernizing Game Aggregator functionality within the existing architecture. Game source code, Licensee Game Portals, and Vendor systems were outside my implementation scope.",
+  "Phát triển .NET 8 APIs để tích hợp thêm game từ Vendor và tiếp nhận game event; migrate các chức năng legacy của Game Aggregator từ .NET Framework 4 sang .NET 8 theo yêu cầu của dự án.": "Developed .NET 8 APIs to integrate additional Vendor games and receive game events; migrated legacy Game Aggregator functionality from .NET Framework 4 to .NET 8 according to project requirements.",
+  "Mở rộng tích hợp và hiện đại hóa Game Aggregator": "Extend integrations and modernize Game Aggregator",
+  "Đóng góp cá nhân: tích hợp thêm game từ Vendor và migrate các chức năng Game Aggregator legacy sang .NET 8 trong hệ thống có sẵn.": "Individual contribution: integrated additional Vendor games and migrated legacy Game Aggregator functionality to .NET 8 within the existing system.",
+  "Với vai trò full-stack developer, trực tiếp triển khai tích hợp thêm game từ Vendor, tiếp nhận game event và migrate các chức năng của Game Aggregator từ .NET Framework 4 sang .NET 8. Sử dụng luồng tracing có sẵn: service publish vào Kafka, Logstash consume và gửi log tới Elasticsearch; tra cứu trên Kibana để hỗ trợ coding và debugging.": "As a full-stack developer, implemented additional Vendor game integrations and event ingestion, and migrated Game Aggregator functionality from .NET Framework 4 to .NET 8. Used the existing tracing pipeline: services published to Kafka, Logstash consumed and sent logs to Elasticsearch, and Kibana supported investigation during implementation and debugging.",
+  "Full-stack: tích hợp game và tiếp nhận game event từ Vendor; migrate các chức năng Game Aggregator từ .NET Framework 4 sang .NET 8; sử dụng Kafka/Kibana để truy vết và debug.": "Full-stack: implemented Vendor game integrations and event ingestion; migrated Game Aggregator functionality from .NET Framework 4 to .NET 8; used Kafka/Kibana for tracing and debugging."
 });
 (() => {
   const textEntries = [];

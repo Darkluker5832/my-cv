@@ -39,7 +39,7 @@ Sau khi sửa nội dung HTML hoặc bản dịch, chạy `node scripts/export-t
 
 ## Game Aggregator
 
-Nền tảng có sẵn khi ứng viên tham gia; vai trò full-stack tập trung tích hợp game mới và migration .NET Framework 4 → .NET 8. Khoảng 20 Vendor/gần 1.000 game là quy mô chung, không phải đóng góp cá nhân. Tracing Kafka/Logstash/Kibana và đối soát/Telegram được mô tả như cơ chế nền tảng có sẵn. Sơ đồ ở mức logic; không tự thêm service topology, correlation ID, giao thức hay số lượng game đã migrate. Chưa có thời gian tham gia nên không tự điền ngày tháng.
+Nền tảng có sẵn khi ứng viên tham gia; vai trò full-stack tập trung tích hợp game từ Vendor, tiếp nhận game event và migration các chức năng Game Aggregator từ .NET Framework 4 → .NET 8. Game từ Vendor dùng engine/ngôn ngữ riêng (ví dụ Cocos, Unity); mã nguồn game không thuộc phạm vi migration. Khoảng 20 Vendor/gần 1.000 game là quy mô chung, không phải đóng góp cá nhân. Tracing Kafka/Logstash/Kibana và đối soát/Telegram được mô tả như cơ chế nền tảng có sẵn. Sơ đồ ở mức logic; không tự thêm service topology, correlation ID, giao thức hay số lượng game đã migrate. Chưa có thời gian tham gia nên không tự điền ngày tháng.
 
 ## Mail Station: Hold / Continue
 
