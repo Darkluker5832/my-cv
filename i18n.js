@@ -519,7 +519,6 @@ Object.assign(portfolioTranslations, {
   "Vai trò: Full-stack Developer · 2024 — 01/2025": "Role: Full-stack Developer · 2024 — 01/2025",
   "Một nền tảng tích hợp game. Nhiều Vendor và Licensee.": "One game integration platform. Multiple Vendors and Licensees.",
   "Công ty cấp phép game từ các Vendor, tổng hợp cùng game tự phát triển rồi cung cấp lại cho các Licensee/Partner. Danh mục gồm nhiều thể loại như strategy, board games, card games và shooting.": "The company licensed games from Vendors, combined them with internally developed games, and supplied them to Licensees/Partners. The catalog covered strategy, board games, card games, shooting, and other genres.",
-  "Mỗi Game Portal lựa chọn tập game riêng theo chiến lược, hiệu quả kinh doanh và campaign; không nhất thiết mở toàn bộ danh mục. Tích hợp nhiều Vendor và nhiều service nội bộ làm việc truy vết request, đối chiếu kết quả và billing trở nên quan trọng.": "Each Game Portal selected its own game offering based on strategy, performance, and campaigns rather than enabling the whole catalog. Integrating multiple Vendors and internal services made request tracing, result reconciliation, and billing verification important.",
   "01 / Bối cảnh & khó khăn hiện tại": "01 / Context & current challenges",
   "Tập trung nội dung game từ nhiều nhà cung cấp": "Centralize game content from multiple providers",
   "02 / Hệ thống cũ": "02 / Legacy system",
@@ -532,11 +531,9 @@ Object.assign(portfolioTranslations, {
   "Kiến trúc và cơ chế tracing/đối soát là các thành phần có sẵn của nền tảng; đóng góp cá nhân tập trung vào các tích hợp và thay đổi được giao.": "The architecture and tracing/reconciliation mechanisms were existing platform capabilities; my individual contribution focused on assigned integrations and changes.",
   "04 / Vai trò cá nhân": "04 / Individual contribution",
   "Full-stack trong hệ thống có sẵn": "Full-stack development within the existing system",
-  "Sơ đồ ở mức logic: Game Portal và Vendor là các hệ thống bên ngoài ranh giới Game Aggregator. Không giả định cấu trúc hay số lượng service cụ thể bên trong nền tảng.": "This is a logical overview: Game Portals and Vendors sit outside the Game Aggregator boundary. It does not imply a particular internal service topology or count.",
   "Sơ đồ thể hiện liên kết playerId–Licensee về mặt nghiệp vụ, không khẳng định service nào tạo tài khoản hoặc quản lý thông tin đăng nhập. Các mũi tên là trao đổi logic, không chỉ định giao thức hay kiểu message chưa được xác nhận.": "The diagram shows the business association between playerId and Licensee without assigning account creation or credential ownership to a specific service. Arrows represent logical exchanges, not an unconfirmed protocol or message type.",
   "Tracing request & cảnh báo mismatch": "Request tracing & mismatch alerts",
   "05 / Hệ thống mới ra đời": "05 / New system",
-  "Từ Game Portal đến Vendor và đối soát kết quả": "From Game Portal to Vendor and result reconciliation",
   "Quy mô tích hợp chung của nền tảng, kết hợp game bên ngoài và game do công ty phát triển.": "Overall platform integration scope, combining external content and company-developed games.",
   "Khoảng 20 Vendor": "Around 20 Vendors",
   "Danh mục nhiều thể loại; mỗi Licensee/Portal chọn tập game phù hợp với chiến lược của họ.": "A multi-genre catalog; each Licensee/Portal selected games suited to its strategy.",
@@ -591,7 +588,6 @@ Object.assign(portfolioTranslations, {
 // Migration applies to Game Aggregator, not Vendor game code or engines.
 Object.assign(portfolioTranslations, {
   "Game Aggregator đã hoạt động trước khi tôi tham gia và được phát triển bằng .NET Framework 4. Đây là hệ thống legacy cần migrate sang .NET 8. Game từ các Vendor được phát triển bằng công nghệ riêng như Cocos, Unity và các ngôn ngữ/engine khác; Game Aggregator tích hợp với Vendor và tiếp nhận các game event, không phải phần mã nguồn game của họ.": "Game Aggregator was already operating when I joined and had been developed using .NET Framework 4. This legacy platform needed migration to .NET 8. Vendor games used their own technologies, such as Cocos, Unity, and other languages/engines. Game Aggregator integrated with Vendors and received game events; the Vendor game code was outside that migration scope.",
-  "Phạm vi công việc là mở rộng tích hợp và hiện đại hóa các chức năng của Game Aggregator trong kiến trúc hiện hữu. Mã nguồn game, Game Portal phía Licensee và hệ thống Vendor nằm ngoài phạm vi triển khai của tôi.": "The work focused on extending integrations and modernizing Game Aggregator functionality within the existing architecture. Game source code, Licensee Game Portals, and Vendor systems were outside my implementation scope.",
   "Phát triển .NET 8 APIs để tích hợp thêm game từ Vendor và tiếp nhận game event; migrate các chức năng legacy của Game Aggregator từ .NET Framework 4 sang .NET 8 theo yêu cầu của dự án.": "Developed .NET 8 APIs to integrate additional Vendor games and receive game events; migrated legacy Game Aggregator functionality from .NET Framework 4 to .NET 8 according to project requirements.",
   "Mở rộng tích hợp và hiện đại hóa Game Aggregator": "Extend integrations and modernize Game Aggregator",
   "Đóng góp cá nhân: tích hợp thêm game từ Vendor và migrate các chức năng Game Aggregator legacy sang .NET 8 trong hệ thống có sẵn.": "Individual contribution: integrated additional Vendor games and migrated legacy Game Aggregator functionality to .NET 8 within the existing system.",
@@ -615,6 +611,14 @@ Object.assign(portfolioTranslations, {
 // Explicit Kafka producer/consumer roles in request tracing.
 Object.assign(portfolioTranslations, {
   "Phát event tracing của request": "Publish request-tracing events"
+});
+// Licensee portal: paid company-provided option or Licensee-built alternative.
+Object.assign(portfolioTranslations, {
+  "Mỗi Licensee lựa chọn tập game riêng theo chiến lược, hiệu quả kinh doanh và campaign; không nhất thiết mở toàn bộ danh mục. Tích hợp nhiều Vendor và nhiều service nội bộ làm việc truy vết request, đối chiếu kết quả và billing trở nên quan trọng.": "Each Licensee selected its own game offering based on strategy, performance, and campaigns rather than enabling the whole catalog. Integrating multiple Vendors and internal services made request tracing, result reconciliation, and billing verification important.",
+  "Licensee có thể sử dụng Game Portal mặc định do công ty cung cấp có thu phí hoặc tự xây portal riêng. Cả hai lựa chọn đều kết nối với Game Aggregator; sơ đồ thể hiện vai trò và kết nối logic, không mô tả topology triển khai.": "Licensees could use the company-provided default Game Portal for a fee or build their own. Both options connected to Game Aggregator; the diagram shows logical roles and connections rather than deployment topology.",
+  "Phạm vi công việc của tôi tập trung vào tích hợp, tiếp nhận game event và hiện đại hóa các chức năng Game Aggregator trong kiến trúc hiện hữu. Không trực tiếp phát triển Game Portal hoặc mã nguồn game của Vendor.": "My work focused on integrations, game-event ingestion, and modernization within the existing Game Aggregator architecture. I did not directly develop Game Portals or Vendor game source code.",
+  "Từ Licensee Game Portal đến Vendor và đối soát kết quả": "From Licensee Game Portal to Vendor and result reconciliation",
+  "Công ty cung cấp / Licensee tự xây": "Company-provided or Licensee-built"
 });
 (() => {
   const textEntries = [];
