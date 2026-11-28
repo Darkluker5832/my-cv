@@ -45,7 +45,7 @@ Data Warehouse separates the web process from queued export services. Applicatio
 
 ## CV and portfolio export
 
-The English CV download points to `output/pdf/Thinh-Truong-CV.pdf`. It is a two-page, single-column resume focusing on four case studies. Additional project summaries remain on the website. The portfolio print button includes all case studies in navigation order and all Mail Station workflows. Ctrl+P defaults to the profile only.
+The English CV download points to `output/pdf/Thinh-Truong-CV.pdf`. It is a three-page, single-column resume including all six project summaries. NAP Accounting and External Admin begin on the third page, followed by education and recognition. The portfolio print button includes all case studies in navigation order and all Mail Station workflows. Ctrl+P defaults to the profile only.
 
 After changing profile content, regenerate the PDF from repository root:
 
